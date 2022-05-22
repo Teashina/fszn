@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head :: headFragment}">
+    <title id="pageTitle">Главная страница с данными</title>
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <a class="btn btn-info btn-md btn-block" th:href="@{/}">Ссылка на главную главную страницу</a>
+        <br>
+
+        <h1>Тут всякие данные</h1>
+
+        <tbody>
+        <tr th:each="customer : ${customer}">
+            <td th:text="${customer.login}"></td>
+            <td th:text="${customer.surname}"></td>
+            <td th:text="${customer.name}"></td>
+            <td th:text="${customer.secname}"></td>
+            <td th:text="${customer.idnum}"></td>
+            <td th:text="${customer.idfszn}"></td>
+            <td th:text="${customer.ipname}"></td>
+            <td th:text="${customer.insurance}"></td>
+            <td th:text="${customer.phoneNumber}"></td>
+            <td th:text="${customer.email}"></td>
+
+
+        </tr>
+        </tbody>
+
+        <br>
+
+    </div>
+
+    <div th:remove="tag" th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>
+
