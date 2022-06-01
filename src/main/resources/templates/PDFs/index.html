@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PY1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page1">
+        <div class="title">
+           <b>Описание пачки документов персонифицированного учёта</b>
+        </div>
+
+        <div class="info">
+            <div class="info_ind">
+                Идентификационный код:
+            </div>
+            <div class="info_ind">
+                Учётный номер плательщика:
+            </div>
+            <div class="info_ind">
+                Наименование:
+            </div>
+        </div>
+        <div class="numPack">
+            Номер пачки:
+        </div>
+        <div class="table">
+            <table border="0">
+                <tr >
+                    <td>№ п\п</td>
+                    <td>Наименование форм</td>
+                    <td>Вид формы</td>
+                    <td> Количество документов передано </td>
+                    <td>Количество документов принято</td>
+                    <td>Примечание</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Анкета застрахованного лица</td>
+                    <td>ПУ-1</td>
+                    <td>1</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Сведения о приеме и увольнении</td>
+                    <td>ПУ-2</td>
+                    <td>0</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Индивидуальные сведения</td>
+                    <td>ПУ-3</td>
+                    <td>0</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td>Итого ДПУ</td>
+                    <td></td>
+                    <td>1</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div class="sub_info">
+            Заполняется по пачкам ДПУ, содержащим форму ПУ-3 "Индивидуальные сведения"
+        </div>
+        <div class="table table2">
+            <table border="1">
+                <tr>
+                    <td>Итого по типам форм</td>
+                    <td> Сумма, рублей выплат (дохода),
+                        на которые <br>
+                        начислены
+                        страховые взносы</td>
+                    <td> пособий по
+                        временной <br>
+                        нетрудоспособности
+                        </td>
+                    <td>
+                        начисляются
+                        страховые взносы
+                    </td>
+                    <td>уплаченных <br>
+                        страховых взносов</td>
+                    <td>Примечание</td>
+                </tr>
+                <tr>
+                    <td>Исходная</td>
+                    <td>
+                        <textarea name="comment" cols="15" rows="1"></textarea>
+                    </td>
+                    <td>
+                        <textarea name="comment" cols="15" rows="1"></textarea>
+                    </td>
+                    <td>
+                        <textarea name="comment" cols="15" rows="1"></textarea>
+                    </td>
+                    <td>
+                        <textarea name="comment" cols="15" rows="1"></textarea>
+                    </td>
+                    <td>
+                        <textarea name="comment" cols="15" rows="1"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Назначение пенсии</td>
+                    <td><textarea name="comment" cols="15" rows="1"></textarea></td>
+                    <td><textarea name="comment" cols="15" rows="1"></textarea></td>
+                    <td><textarea name="comment" cols="15" rows="1"></textarea></td>
+                    <td><textarea name="comment" cols="15" rows="1"></textarea></td>
+                    <td><textarea name="comment" cols="15" rows="1"></textarea></td>
+                </tr>
+            </table>
+        </div>
+        <div class="credo">
+            <div class="credo_item"><b>Руководитель:</b><textarea name="comment" cols="15" rows="1"> </textarea></div>
+            <div class="credo_item"><b>Cдал:</b><textarea name="comment" cols="15" rows="1"></textarea></div>
+            <div class="credo_item">Принял:<textarea name="comment" cols="15" rows="1"> </textarea></div>
+            <div class="credo_itemS ">Дата приёма ДПУ<input type="date" name="" id=""></div>
+        </div>
+    </div>
+
+    <div class="page2">
+        <div class="page2_title">
+            АНКЕТА ЗАСТРАХОВАННОГО ЛИЦА
+        </div>
+        <div class="type">
+            <b>Тип формы</b><Br>
+                <div class="type_item">
+                    <input type="checkbox" name="browser" value="ie">Регистрация
+                </div>
+                <div class="type_item">
+                    <input type="checkbox" name="browser" value="opera">Изменение анкетных данных
+                </div>
+                <div class="type_item">
+                    <input type="checkbox" name="browser" value="firefox">Восстановвление свидетельства
+                </div>
+                               
+        </div>
+        <div class="aboutInfo">
+            <tbody>
+                <tr th:each="customer : ${customer}">
+                    <div class="a">
+                        <b >Фамилия</b><td th:text="${customer.surname}" ></td>
+                    </div>
+                    <div class="a">
+                        <b>Имя</b><td th:text="${customer.name}" ></td>
+                    </div>
+                    <div class="a">
+                        <b class="a">Отчество</b><td th:text="${customer.secname}" ></td>
+                    </div>
+                    
+                </tr>
+            </tbody>
+            <div class="sex">
+                <p>Пол
+                    <select>
+                        <option>Мужской</option>
+                        <option>Женский</option>
+                    </select>
+                </p> 
+            </div>
+            
+            <div class="grajd">
+                <p>Гражданство
+                    <textarea name="comment" cols="10" rows="1"></textarea></p>
+                </p>
+            </div>
+            <div class="birth">
+                <p>Дата рождения
+                    <textarea name="comment" cols="10" rows="1"></textarea></p>
+                </p>
+            </div>
+            <div class="placeBirth">
+                <p>Место рождения</p>
+                <p>Город
+                    <textarea name="comment" cols="10" rows="1"></textarea></p>
+                </p>
+                <p>Район
+                    <textarea name="comment" cols="10" rows="1"></textarea></p>
+                </p>
+                <p>Область
+                    <textarea name="comment" cols="10" rows="1"></textarea></p>
+                </p>
+                <p>Страна
+                    <textarea name="comment" cols="10" rows="1"></textarea></p>
+                </p>
+            </div>
+            <div class="pasport">
+                <div class="titleO">
+                    Данные документа, удостоверяющего личность, или документа для выезда за границу:
+                </div>
+                <div class="pasport_item">
+                    Cерия (при наличии)
+                    <textarea name="comment" cols="10" rows="1"></textarea>
+                </div>
+                <div class="pasport_item">
+                    Дата выдачи
+                    <textarea name="comment" cols="10" rows="1"></textarea>
+                </div>
+                <div class="pasport_item">
+                    Идентификационный номер
+                    <textarea name="comment" cols="10" rows="1"></textarea>
+                </div>
+                <div class="div">
+                    Наименование (код) государственного органа, выдавшего документ, удостоверяющего личность,
+                    или документ для выезда за границу:
+                </div>
+            </div>
+            <div class="aboutPasport">
+                <p class="titleO"> КЕМ ВЫДАН</p>
+                <div class="aboutPasportbord">
+                    <div class="aboutPasportTitle">
+                        Сведения, указанные в ранее выданном свидетельстве социального страхования
+                        (заполняется при изменении анкетных данных и восcтановлении свидетельства социального страхования)
+                    </div>
+                    <div class="boutPasportbordInd">
+                        Страховой номер<textarea name="comment" cols="10" rows="1"></textarea>
+                    </div>
+                    <tbody>
+                        <tr th:each="customer : ${customer}">
+                            <div class="a">
+                                <b >Фамилия</b><td th:text="${customer.surname}" id="2"></td>
+                            </div>
+                            <div class="a">
+                                <b>Имя</b><td th:text="${customer.name}" id="3"></td>
+                            </div>
+                            <div class="a">
+                                <b class="a">Отчество</b><td th:text="${customer.secname}" id="4"></td>
+                            </div>   
+                        </tr>
+                        <div class="boutPasportbordInd">
+                            Дата рождения<textarea name="comment" cols="10" rows="1"></textarea>
+                        </div>
+                    </tbody>
+                </div>
+            </div>
+
+            <div class="foter">
+                <p>Место жительства</p>
+                <div class="adr">Адрес
+                    <textarea name="comment" cols="10" rows="1"></textarea>
+                </div>
+                <div class="index">Индекс
+                    <textarea name="comment" cols="10" rows="1"></textarea>
+                </div>
+                <p>Телефон</p>
+                <div>Домашний
+                    <textarea name="comment" cols="10" rows="1"></textarea>
+                </div>
+                <div>мобильный
+                    <textarea name="comment" cols="10" rows="1"></textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+<button>Отправить</button>
+<button>Назад</button>
+</body>
+</html>
