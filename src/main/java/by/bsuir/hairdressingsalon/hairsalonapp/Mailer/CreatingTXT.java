@@ -18,13 +18,32 @@ public class CreatingTXT {
             // запись по символам
             writer.append('\n');
             writer.append('E');
-
             writer.close();
         }
         catch(IOException ex){
-
             System.out.println(ex.getMessage());
         }
+
+    }
+
+    public File CreateFileTXT() {
+
+        File myFile = new File("file.txt");
+        try
+        {
+            FileWriter writer = new FileWriter(myFile);
+            // запись всей строки
+            String text = "Hello Gold!";
+            writer.write(text);
+            // запись по символам
+            writer.append('\n');
+            writer.append('E');
+            writer.close();
+        }
+        catch(IOException ex){
+            System.out.println(ex.getMessage());
+        }
+        return myFile;
 
     }
 
