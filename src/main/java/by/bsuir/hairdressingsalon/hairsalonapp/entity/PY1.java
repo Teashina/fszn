@@ -14,7 +14,7 @@ import java.util.Objects;
 @Setter
 @ToString
 @RequiredArgsConstructor
-@NoArgsConstructor
+
 @EqualsAndHashCode(of = {"id"})
 @Entity
 @Table(name = "py1")

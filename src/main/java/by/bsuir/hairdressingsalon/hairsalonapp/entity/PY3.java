@@ -12,7 +12,7 @@ import java.util.Objects;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
+
 @NoArgsConstructor
 @Entity
 @Table(name = "py3")

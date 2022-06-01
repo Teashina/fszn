@@ -14,11 +14,11 @@ import java.util.Objects;
 @Getter
 @Setter
 @RequiredArgsConstructor
-@NoArgsConstructor
+
 @EqualsAndHashCode(of = {"id"})
 @ToString(of = {"id"})
 @Entity
-@Table(name = "employee")
+@Table(name = "dates")
 public class Dates {
 
     @Id
