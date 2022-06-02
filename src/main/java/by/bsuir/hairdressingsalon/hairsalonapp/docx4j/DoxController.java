@@ -75,7 +75,7 @@ public class DoxController {
 
         HashMap<String, String> maps = new HashMap<>();
         maps.put("511111111", "Mary");
-        maps.put("how", "How about you?");
+        maps.put("how", "How about you? щ");
         maps.put("me", "Me too.");
 
         System.out.println("Replacing is started.");
