@@ -52,6 +52,7 @@ public class DownloadController {
 
         if (file.getName().indexOf(".txt")>-1) response.setContentType("application/txt");
         if (file.getName().indexOf(".pdf")>-1) response.setContentType("application/pdf");
+        if (file.getName().indexOf(".docx")>-1) response.setContentType("application/docx");
 
 
         //response.setContentType("application/octet-stream");

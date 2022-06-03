@@ -85,4 +85,89 @@ public class DoxController {
         System.out.println("Replacing is finished.");
     }
 
+
+    @GetMapping("/py1word")
+    public @ResponseBody
+    ResponseEntity<String> createWordPY1(@AuthenticationPrincipal Customer customer, Model model) throws DocumentException, IOException {
+
+        model.addAttribute("customer", customer);
+        String email = customer.getEmail();
+
+        String log4jConfPath = "src/main/resources/log4j.properties";
+        PropertyConfigurator.configure(log4jConfPath);
+        BasicConfigurator.configure();
+
+        String templateDoc = docxPath + "PY1_I.docx";
+        String outputDoc = resourcesPath + "output//PY1_I.docx";
+
+        HashMap<String, String> maps = new HashMap<>();
+        maps.put("511111111", "Mary");
+        maps.put("how", "How about you? щ");
+        maps.put("me", "Me too.");
+
+        System.out.println("Replacing is started.");
+
+        ReplaceVariables.replace(templateDoc, outputDoc, maps);
+
+        System.out.println("Replacing is finished.");
+
+        return new ResponseEntity<>("Ворд создан", HttpStatus.OK);
+    }
+
+    @GetMapping("/py2word")
+    public @ResponseBody
+    ResponseEntity<String> createWordPY2(@AuthenticationPrincipal Customer customer, Model model) throws DocumentException, IOException {
+
+        model.addAttribute("customer", customer);
+        String email = customer.getEmail();
+
+        String log4jConfPath = "src/main/resources/log4j.properties";
+        PropertyConfigurator.configure(log4jConfPath);
+        BasicConfigurator.configure();
+
+        String templateDoc = docxPath + "PY2_I.docx";
+        String outputDoc = resourcesPath + "output//replaced-doc.docx";
+
+        HashMap<String, String> maps = new HashMap<>();
+        maps.put("511111111", "Mary");
+        maps.put("how", "How about you? щ");
+        maps.put("me", "Me too.");
+
+        System.out.println("Replacing is started.");
+
+        ReplaceVariables.replace(templateDoc, outputDoc, maps);
+
+        System.out.println("Replacing is finished.");
+
+        return new ResponseEntity<>("Ворд создан", HttpStatus.OK);
+    }
+
+    @GetMapping("/py3word")
+    public @ResponseBody
+    ResponseEntity<String> createWordPY3(@AuthenticationPrincipal Customer customer, Model model) throws DocumentException, IOException {
+
+        model.addAttribute("customer", customer);
+        String email = customer.getEmail();
+
+        String log4jConfPath = "src/main/resources/log4j.properties";
+        PropertyConfigurator.configure(log4jConfPath);
+        BasicConfigurator.configure();
+
+        String templateDoc = docxPath + "PY1_I.docx";
+        String outputDoc = resourcesPath + "output//replaced-doc.docx";
+
+        HashMap<String, String> maps = new HashMap<>();
+        maps.put("511111111", "Mary");
+        maps.put("how", "How about you? щ");
+        maps.put("me", "Me too.");
+
+        System.out.println("Replacing is started.");
+
+        ReplaceVariables.replace(templateDoc, outputDoc, maps);
+
+        System.out.println("Replacing is finished.");
+
+        return new ResponseEntity<>("Ворд создан", HttpStatus.OK);
+    }
+
 }
