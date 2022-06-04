@@ -28,14 +28,14 @@ public class PY1Service {
         return py1Repository.findAll();
     }
 
-    public Optional<PY1> getDatesById(Long id) {
+    public Optional<PY1> getPY1ById(Long id) {
         return py1Repository.findById(id);
     }
 
      // public Optional<PY1> getDatesByCustomerId(Long id) {return py1Repository.findByCustomerId(id);}
 
 
-    public List<PY1> getDatesByCustomer(Customer customer) {
+    public List<PY1> getPY1ByCustomer(Customer customer) {
         return py1Repository.findPY1ByCustomer(customer);
     }
 

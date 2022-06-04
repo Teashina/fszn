@@ -48,8 +48,10 @@ public class Dates {
     private PY3 py3;
 
 
-    public void set(PY3 py3) {
 
+
+    public void setPy3(PY3 py3) {
+        this.py3 = py3;
     }
 
     @Override

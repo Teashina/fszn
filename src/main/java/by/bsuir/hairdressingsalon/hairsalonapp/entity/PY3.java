@@ -76,14 +76,13 @@ public class PY3 {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "py3", orphanRemoval = true )
     private List<Dates> dates = new ArrayList<>();
 
-    public void addDatesToPy3(Dates dates1) {
-        if (dates == null)
-        {dates = new ArrayList();}
-
-        dates.add(dates1);
-        dates1.set(this);
+    public void setDates(List<Dates> dates) {
+        this.dates = dates;
     }
 
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 
     /*  @JsonManagedReference
     @ManyToOne(fetch = FetchType.EAGER)

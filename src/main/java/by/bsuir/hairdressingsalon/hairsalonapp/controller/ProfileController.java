@@ -25,28 +25,41 @@ public class ProfileController {
     private final EmployeeService employeeService;
 
     private final PY1Service py1Service;
+    private final PY2Service py2Service;
+    private final PY3Service py3Service;
 
     @Autowired
     public ProfileController(CustomerService customerService,
                              AppointmentService appointmentService,
                              SalonProcedureService procedureService,
                              EmployeeService employeeService,
-                             PY1Service py1Service) {
+                             PY1Service py1Service,
+                             PY2Service py2Service,
+                             PY3Service py3Service) {
         this.customerService = customerService;
         this.appointmentService = appointmentService;
         this.procedureService = procedureService;
         this.employeeService = employeeService;
         this.py1Service = py1Service;
+        this.py2Service = py2Service;
+        this.py3Service = py3Service;
+
 
     }
 
     @GetMapping
     public String displayCustomerProfilePage(@AuthenticationPrincipal Customer customer, Model model) {
         List<ProcedureAppointment> appointmentsForCustomer = appointmentService.getAppointmentsForCustomer(customer);
+        List<PY1> py1ForCustomer = py1Service.getPY1ByCustomer(customer);
+        List<PY2> py2ForCustomer = py2Service.getPY2ByCustomer(customer);
+        List<PY3> py3ForCustomer = py3Service.getPY3ByCustomer(customer);
 
         Customer customerData = customerService.findByLoginOrEmail(customer.getLogin(), null).orElseThrow();
         model.addAttribute("customer", customerData);
         model.addAttribute("appointmentsForCustomer", appointmentsForCustomer);
+        model.addAttribute("py1ForCustomer", py1ForCustomer);
+        model.addAttribute("py2ForCustomer", py2ForCustomer);
+        model.addAttribute("py3ForCustomer", py3ForCustomer);
 
         return "customer/profile";
     }
@@ -148,52 +161,7 @@ public class ProfileController {
     }
 
 
-    @GetMapping("/createPY1")
-    public String createPY111(@AuthenticationPrincipal Customer customer, Model model) {
-        System.out.println("перед созданием класса");
 
-        PY1 py1 = new PY1();
-        System.out.println("после созданием класса");
-        model.addAttribute("customer", customer);
-        model.addAttribute("py1", py1);
-
-        return "customer/py1";
-    }
-
-    @PostMapping("/createPY11")
-    public String createPy11(@AuthenticationPrincipal Customer customer,
-                            @Validated PY1 py1,
-                            BindingResult bindingResult,
-                            Model model) {
-
-        if (bindingResult.hasErrors() || bindingResult.hasFieldErrors()) {
-            return "customer/py1";
-        }
-        System.out.println("сработало");
-
-        py1.setCustomer(customer);
-        py1Service.save(py1);
-        System.out.println(py1.toString());
-        return "customer/py1";
-    }
-
-    @PostMapping("/createPY1")
-    public String createPy1(@AuthenticationPrincipal Customer customer,
-                            @Validated PY1 py1,
-                            BindingResult bindingResult,
-                            Model model) {
-        if (bindingResult.hasErrors() || bindingResult.hasFieldErrors()) {
-            System.out.println("тут всратыш");
-           // return "customer/";
-            return "customer/py1";
-        }
-
-        System.out.println("сработало после всратыша");
-        py1.setCustomer(customer);
-        py1Service.save(py1);
-        System.out.println(py1.toString());
-        return "customer/py1";
-    }
 
 }
 

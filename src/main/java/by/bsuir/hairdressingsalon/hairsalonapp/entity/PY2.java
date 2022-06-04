@@ -27,12 +27,12 @@ public class PY2 {
 
     @PastOrPresent(message = "Дата должна быть пораньше")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "date_start", nullable = false)
+    @Column(name = "date_start")
     private LocalDate date_start;
 
     @PastOrPresent(message = "Дата должна быть пораньше")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "date_end", nullable = false)
+    @Column(name = "date_end")
     private LocalDate date_end;
 
 
@@ -41,20 +41,20 @@ public class PY2 {
     //private LocalTime startTime;
 
     @Size(min = 2, message = "Длина должна быть минимум 2 символа")
-    @Column(name = "reason", nullable = false)
+    @Column(name = "reason")
     private String reason;
 
     @Size(min = 3, message = "Длина должна быть минимум 3 символа")
-    @Column(name = "pr_number", nullable = false)
+    @Column(name = "pr_number")
     private String pr_number;
 
     @PastOrPresent(message = "Дата должна быть пораньше")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "pr_data")
-    private String pr_data;
+    private LocalDate pr_data;
 
     @Size(min = 2, message = "Длина должна быть минимум 3 символа")
-    @Column(name = "codd", nullable = false)
+    @Column(name = "codd")
     private String codd;
 
 
@@ -88,6 +88,8 @@ public class PY2 {
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+
+
 
     @Override
     public String toString() {

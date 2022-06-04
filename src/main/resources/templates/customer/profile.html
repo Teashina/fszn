@@ -45,6 +45,45 @@
 
         <br />
 
+        <div class="table-responsive">
+            <table class="table table-borderless table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Название формы ПУ</th>
+                    <th>Управление</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each="py1 : ${py1ForCustomer}">
+                    <td th:text="${py1.sex}"></td>
+                    <td>
+
+                        <a class="btn btn-danger" th:href="@{/profile}">
+                            Удалить форму ПУ
+                        </a>
+                    </td>
+                </tr>
+                <tr th:each="py2 : ${py2ForCustomer}">
+                    <td th:text="${py2.codd}"></td>
+                    <td>
+
+                        <a class="btn btn-danger" th:href="@{/profile}">
+                            Удалить форму ПУ
+                        </a>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+
+
+
         <!--TODO: Изменить ссылки-->
         <a class="btn btn-warning" th:href="@{/profile/edit/}">
             Редактировать профиль
@@ -82,7 +121,11 @@
     </div>
 
     <div>
-        <a class="btn btn-primary" th:href="@{/profile/createPY1}" style="margin-top: 15px">Создать ворд пу-1</a>
+        <a class="btn btn-primary" th:href="@{/createPY1}" style="margin-top: 15px">пу-1</a>
+    </div>
+
+    <div>
+        <a class="btn btn-primary" th:href="@{/createPY2}" style="margin-top: 15px">пу-2</a>
     </div>
 
 

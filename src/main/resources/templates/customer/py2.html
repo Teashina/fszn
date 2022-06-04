@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head :: headFragment}">
+    <title id="pageTitle">Создание формы ПУ-2</title>
+</head>
+
+<body>
+<div class="container">
+    <br>
+    <a class="btn btn-info btn-md btn-block" th:href="@{/}">Вернуться на домашнюю страницу</a>
+    <br>
+
+    <h1>Создание формы ПУ-2</h1>
+
+
+    <tbody>
+    <tr th:each="customer : ${customer}">
+        <td th:text="${customer.surname}" id="2"></td>
+        <br>
+        <td th:text="${customer.name}" id="3"></td>
+        <br>
+        <td th:text="${customer.secname}" id="4"></td>
+    </tr>
+    </tbody>
+
+
+    <form method="post" th:action="@{/createPY2}" th:object="${py2}">
+            <div class="form-group col-md-6">
+                <label for="date_start">Гражданство</label>
+                <input class="form-control" id="date_start"
+                       placeholder="Беларусь"
+
+                       th:field="*{date_start}" type="date">
+                <label class="alert alert-danger" for="date_start"
+                       th:errors="*{date_start}"
+                       th:if="${#fields.hasErrors('date_start')}">
+                    Ошибка при вводе имени
+                </label>
+            </div>
+
+
+            <div class="form-group col-md-6">
+                <label for="date_end">Имя</label>
+                <input class="form-control" id="date_end"
+                       placeholder="date_end"
+                       th:field="*{date_end}" type="date">
+                <label class="alert alert-danger" for="date_end"
+                       th:errors="*{date_end}"
+                       th:if="${#fields.hasErrors('date_end')}">
+                    Ошибка при вводе имени
+                </label>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="reason">Имя</label>
+                <input class="form-control" id="reason"
+                       placeholder="reason"
+                       th:field="*{reason}" type="text">
+                <label class="alert alert-danger" for="reason"
+                       th:errors="*{reason}"
+                       th:if="${#fields.hasErrors('reason')}">
+                    Ошибка при вводе имени
+                </label>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="pr_number">Имя</label>
+                <input class="form-control" id="pr_number"
+                       placeholder="area_of_birth"
+                       th:field="*{pr_number}" type="text">
+                <label class="alert alert-danger" for="pr_number"
+                       th:errors="*{pr_number}"
+                       th:if="${#fields.hasErrors('pr_number')}">
+                    Ошибка при вводе имени
+                </label>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="pr_data">Имя</label>
+                <input class="form-control" id="pr_data"
+                       placeholder="country"
+                       th:field="*{pr_data}" type="date">
+                <label class="alert alert-danger" for="pr_data"
+                       th:errors="*{pr_data}"
+                       th:if="${#fields.hasErrors('pr_data')}">
+                    Ошибка при вводе имени
+                </label>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="codd">Имя</label>
+                <input class="form-control" id="codd"
+                       placeholder="codd"
+                       th:field="*{codd}" type="text">
+                <label class="alert alert-danger" for="codd"
+                       th:errors="*{codd}"
+                       th:if="${#fields.hasErrors('codd')}">
+                    Ошибка при вводе имени
+                </label>
+            </div>
+
+
+
+
+
+        <button class="btn btn-primary" type="submit"> Создать ПУ-2</button>
+    </form>
+</div>
+
+<div th:remove="tag" th:replace="~{fragments/footer :: footer}"></div>
+
+</body>
+</html>
