@@ -3,6 +3,7 @@ package by.bsuir.hairdressingsalon.hairsalonapp.entity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -12,6 +13,7 @@ import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
+@ToString
 @EqualsAndHashCode(of = {"id"})
 @Entity
 @Table(name = "py2")
@@ -79,4 +81,25 @@ public class PY2 {
     
     */
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    @Override
+    public String toString() {
+        return "PY2{" +
+                "id=" + id +
+                ", date_start=" + date_start +
+                ", date_end=" + date_end +
+                ", reason='" + reason + '\'' +
+                ", pr_number='" + pr_number + '\'' +
+                ", pr_data='" + pr_data + '\'' +
+                ", codd='" + codd + '\'' +
+                ", customer=" + customer +
+                '}';
+    }
 }

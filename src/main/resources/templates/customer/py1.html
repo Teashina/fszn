@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head :: headFragment}">
+    <title id="pageTitle">Зарегистрироваться</title>
+</head>
+
+<body>
+<div class="container">
+    <br>
+    <a class="btn btn-info btn-md btn-block" th:href="@{/}">Вернуться на домашнюю страницу</a>
+    <br>
+
+    <h1>py 1</h1>
+
+
+    <tbody>
+    <tr th:each="customer : ${customer}">
+        <td th:text="${customer.surname}" id="2"></td>
+        <br>
+        <td th:text="${customer.name}" id="3"></td>
+        <br>
+        <td th:text="${customer.secname}" id="4"></td>
+    </tr>
+    </tbody>
+
+
+    <form method="post" th:action="@{/profile/createPY1}" th:object="${py1}">
+            <div class="form-group col-md-6">
+                <label for="citizenship">Гражданство</label>
+                <input class="form-control" id="citizenship"
+                       placeholder="Беларусь"
+
+                       th:field="*{citizenship}"
+                       type="text">
+                <label class="alert alert-danger" for="citizenship"
+                       th:errors="*{citizenship}"
+                       th:if="${#fields.hasErrors('citizenship')}">
+                    Ошибка при вводе имени
+                </label>
+            </div>
+
+
+            <div class="form-group col-md-6">
+                <label for="date_of_birth">Имя</label>
+                <input class="form-control" id="date_of_birth"
+                       placeholder="date_of_birth"
+                       th:field="*{date_of_birth}" type="date">
+                <label class="alert alert-danger" for="date_of_birth"
+                       th:errors="*{date_of_birth}"
+                       th:if="${#fields.hasErrors('date_of_birth')}">
+                    Ошибка при вводе имени
+                </label>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="sity_of_birth">Имя</label>
+                <input class="form-control" id="sity_of_birth"
+                       placeholder="sity_of_birth"
+                       th:field="*{sity_of_birth}" type="text">
+                <label class="alert alert-danger" for="sity_of_birth"
+                       th:errors="*{sity_of_birth}"
+                       th:if="${#fields.hasErrors('sity_of_birth')}">
+                    Ошибка при вводе имени
+                </label>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="area_of_birth">Имя</label>
+                <input class="form-control" id="area_of_birth"
+                       placeholder="area_of_birth"
+                       th:field="*{area_of_birth}" type="text">
+                <label class="alert alert-danger" for="area_of_birth"
+                       th:errors="*{area_of_birth}"
+                       th:if="${#fields.hasErrors('area_of_birth')}">
+                    Ошибка при вводе имени
+                </label>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="country">Имя</label>
+                <input class="form-control" id="country"
+                       placeholder="country"
+                       th:field="*{country}" type="text">
+                <label class="alert alert-danger" for="country"
+                       th:errors="*{country}"
+                       th:if="${#fields.hasErrors('country')}">
+                    Ошибка при вводе имени
+                </label>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="sex">Имя</label>
+                <input class="form-control" id="sex"
+                       placeholder="sex"
+                       th:field="*{sex}" type="text">
+                <label class="alert alert-danger" for="sex"
+                       th:errors="*{sex}"
+                       th:if="${#fields.hasErrors('sex')}">
+                    Ошибка при вводе имени
+                </label>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="address">Имя</label>
+                <input class="form-control" id="address"
+                       placeholder="address"
+                       th:field="*{address}" type="text">
+                <label class="alert alert-danger" for="address"
+                       th:errors="*{address}"
+                       th:if="${#fields.hasErrors('address')}">
+                    Ошибка при вводе имени
+                </label>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="indeks">Имя</label>
+                <input class="form-control" id="indeks"
+                       placeholder="indeks"
+                       th:field="*{indeks}" type="text">
+                <label class="alert alert-danger" for="indeks"
+                       th:errors="*{indeks}"
+                       th:if="${#fields.hasErrors('indeks')}">
+                    Ошибка при вводе имени
+                </label>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="telephone">Имя</label>
+                <input class="form-control" id="telephone"
+                       placeholder="telephone"
+                       th:field="*{telephone}" type="tel">
+                <label class="alert alert-danger" for="telephone"
+                       th:errors="*{telephone}"
+                       th:if="${#fields.hasErrors('telephone')}">
+                    Ошибка при вводе имени
+                </label>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="telephone_home">Имя</label>
+                <input class="form-control" id="telephone_home"
+                       placeholder="telephone_home"
+                       th:field="*{telephone_home}" type="text">
+                <label class="alert alert-danger" for="telephone_home"
+                       th:errors="*{telephone_home}"
+                       th:if="${#fields.hasErrors('telephone_home')}">
+                    Ошибка при вводе имени
+                </label>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="series">Имя</label>
+                <input class="form-control" id="series"
+                       placeholder="series"
+                       th:field="*{series}" type="text">
+                <label class="alert alert-danger" for="series"
+                       th:errors="*{series}"
+                       th:if="${#fields.hasErrors('series')}">
+                    Ошибка при вводе имени
+                </label>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="num">Имя</label>
+                <input class="form-control" id="num"
+                       placeholder="num"
+                       th:field="*{num}" type="text">
+                <label class="alert alert-danger" for="num"
+                       th:errors="*{num}"
+                       th:if="${#fields.hasErrors('num')}">
+                    Ошибка при вводе имени
+                </label>
+            </div>
+
+
+
+
+        <button class="btn btn-primary" type="submit"> Создать ПУ-1</button>
+    </form>
+</div>
+
+<div th:remove="tag" th:replace="~{fragments/footer :: footer}"></div>
+
+</body>
+</html>

@@ -1,13 +1,7 @@
 package by.bsuir.hairdressingsalon.hairsalonapp.controller;
 
-import by.bsuir.hairdressingsalon.hairsalonapp.entity.Customer;
-import by.bsuir.hairdressingsalon.hairsalonapp.entity.Employee;
-import by.bsuir.hairdressingsalon.hairsalonapp.entity.ProcedureAppointment;
-import by.bsuir.hairdressingsalon.hairsalonapp.entity.SalonProcedure;
-import by.bsuir.hairdressingsalon.hairsalonapp.service.AppointmentService;
-import by.bsuir.hairdressingsalon.hairsalonapp.service.CustomerService;
-import by.bsuir.hairdressingsalon.hairsalonapp.service.EmployeeService;
-import by.bsuir.hairdressingsalon.hairsalonapp.service.SalonProcedureService;
+import by.bsuir.hairdressingsalon.hairsalonapp.entity.*;
+import by.bsuir.hairdressingsalon.hairsalonapp.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -17,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -29,15 +24,20 @@ public class ProfileController {
     private final SalonProcedureService procedureService;
     private final EmployeeService employeeService;
 
+    private final PY1Service py1Service;
+
     @Autowired
     public ProfileController(CustomerService customerService,
                              AppointmentService appointmentService,
                              SalonProcedureService procedureService,
-                             EmployeeService employeeService) {
+                             EmployeeService employeeService,
+                             PY1Service py1Service) {
         this.customerService = customerService;
         this.appointmentService = appointmentService;
         this.procedureService = procedureService;
         this.employeeService = employeeService;
+        this.py1Service = py1Service;
+
     }
 
     @GetMapping
@@ -57,7 +57,7 @@ public class ProfileController {
 
         Customer customerData = customerService.findByLoginOrEmail(customer.getLogin(), null).orElseThrow();
         model.addAttribute("customer", customerData);
-         System.out.print("get");
+        System.out.print("get");
         return "customer/mainpage";
     }
 
@@ -146,4 +146,58 @@ public class ProfileController {
 
         return "redirect:/profile";
     }
+
+
+    @GetMapping("/createPY1")
+    public String createPY111(@AuthenticationPrincipal Customer customer, Model model) {
+        System.out.println("перед созданием класса");
+
+        PY1 py1 = new PY1();
+        System.out.println("после созданием класса");
+        model.addAttribute("customer", customer);
+        model.addAttribute("py1", py1);
+
+        return "customer/py1";
+    }
+
+    @PostMapping("/createPY11")
+    public String createPy11(@AuthenticationPrincipal Customer customer,
+                            @Validated PY1 py1,
+                            BindingResult bindingResult,
+                            Model model) {
+
+        if (bindingResult.hasErrors() || bindingResult.hasFieldErrors()) {
+            return "customer/py1";
+        }
+        System.out.println("сработало");
+
+        py1.setCustomer(customer);
+        py1Service.save(py1);
+        System.out.println(py1.toString());
+        return "customer/py1";
+    }
+
+    @PostMapping("/createPY1")
+    public String createPy1(@AuthenticationPrincipal Customer customer,
+                            @Validated PY1 py1,
+                            BindingResult bindingResult,
+                            Model model) {
+        if (bindingResult.hasErrors() || bindingResult.hasFieldErrors()) {
+            System.out.println("тут всратыш");
+           // return "customer/";
+            return "customer/py1";
+        }
+
+        System.out.println("сработало после всратыша");
+        py1.setCustomer(customer);
+        py1Service.save(py1);
+        System.out.println(py1.toString());
+        return "customer/py1";
+    }
+
 }
+
+
+
+
+

@@ -10,10 +10,11 @@ import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.Objects;
 
+@NoArgsConstructor
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
+
 
 @EqualsAndHashCode(of = {"id"})
 @Entity
@@ -28,15 +29,15 @@ public class PY1 {
 
     @Past(message = "Дата рождения должна быть пораньше")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "date_of_birth", nullable = false)
+    @Column(name = "date_of_birth")
     private LocalDate date_of_birth;
 
     //@DateTimeFormat(pattern = "HH:mm")
    // @Column(name = "appointment_time")
     //private LocalTime startTime;
 
-    @Size(min = 3, message = "Длина должна быть минимум 3 символа")
-    @Column(name = "citizenship", nullable = false)
+    //@Size(min = 3, message = "Длина должна быть минимум 3 символа")
+    @Column(name = "citizenship")
     private String citizenship;
 
     @Size(min = 3, message = "Длина должна быть минимум 3 символа")
@@ -105,6 +106,10 @@ public class PY1 {
 
 
     */
+
+    public PY1(Long id) {
+        this.id = id;
+    }
 
     public LocalDate getDate_of_birth() {
         return date_of_birth;
@@ -211,18 +216,28 @@ public class PY1 {
     }
 
 
-
-
-
     @Override
     public String toString() {
-        return "ProcedureAppointment{" +
+        return "PY1{" +
                 "id=" + id +
-                ", date="  +
-                ", startTime="  +
-                ", signedUpCustomer=" +  +
+                ", date_of_birth=" + date_of_birth +
+                ", citizenship='" + citizenship + '\'' +
+                ", sity_of_birth='" + sity_of_birth + '\'' +
+                ", area_of_birth='" + area_of_birth + '\'' +
+                ", country='" + country + '\'' +
+                ", sex='" + sex + '\'' +
+                ", address='" + address + '\'' +
+                ", indeks='" + indeks + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", telephone_home='" + telephone_home + '\'' +
+                ", series='" + series + '\'' +
+                ", num='" + num + '\'' +
+                ", customer=" + customer +
                 '}';
     }
+
+
+
 
     @Override
     public boolean equals(Object o) {
