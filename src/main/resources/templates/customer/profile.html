@@ -50,13 +50,24 @@
                 <thead class="thead-dark">
                 <tr>
                     <th>Название формы ПУ</th>
+                    <th>Скачать</th>
+                    <th>Отправить на почту</th>
                     <th>Управление</th>
                 </tr>
                 </thead>
 
                 <tbody>
                 <tr th:each="py1 : ${py1ForCustomer}">
-                    <td th:text="${py1.sex}"></td>
+                    <td th:text="${py1.name}"></td>
+                    <td>
+                        <a class="btn btn-warning" th:href="@{/download/txtpy1/{id} (id = ${py1.id})}">
+                            Скачать TXT
+                        </a>
+                        <a class="btn btn-warning" th:href="@{/download/wordpy1/{id} (id = ${py1.id})}">
+                            Скачать для печати
+                        </a>
+
+                    </td>
                     <td>
 
                         <a class="btn btn-danger" th:href="@{/profile}">
@@ -65,9 +76,34 @@
                     </td>
                 </tr>
                 <tr th:each="py2 : ${py2ForCustomer}">
-                    <td th:text="${py2.codd}"></td>
+                    <td th:text="${py2.name}"></td>
                     <td>
+                        <a class="btn btn-warning" th:href="@{/download/txtpy2/{id} (id = ${py2.id})}">
+                        Скачать TXT
+                    </a>
+                        <a class="btn btn-warning" th:href="@{/download/wordpy2/{id} (id = ${py2.id})}">
+                            Скачать для печати
+                        </a>
 
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" th:href="@{/profile}">
+                            Удалить форму ПУ
+                        </a>
+                    </td>
+                </tr>
+                <tr th:each="py3 : ${py3ForCustomer}">
+                    <td th:text="${py3.name}"></td>
+                    <td>
+                        <a class="btn btn-warning" th:href="@{/download/txtpy3/{id} (id = ${py3.id})}">
+                            Скачать TXT
+                        </a>
+                        <a class="btn btn-warning" th:href="@{/download/wordpy3/{id} (id = ${py3.id})}">
+                            Скачать для печати
+                        </a>
+
+                    </td>
+                    <td>
                         <a class="btn btn-danger" th:href="@{/profile}">
                             Удалить форму ПУ
                         </a>

@@ -1,6 +1,7 @@
 package by.bsuir.hairdressingsalon.hairsalonapp.controller;
 
 
+import by.bsuir.hairdressingsalon.hairsalonapp.Mailer.CreatingTXT;
 import by.bsuir.hairdressingsalon.hairsalonapp.entity.Customer;
 import by.bsuir.hairdressingsalon.hairsalonapp.entity.PY1;
 import by.bsuir.hairdressingsalon.hairsalonapp.entity.PY2;
@@ -15,8 +16,15 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -68,9 +76,24 @@ public class Py2Controller {
 
 
         System.out.println("сработало после всратыша");
+        SimpleDateFormat dateFormat = null;
+        dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+
+        System.out.println(dateFormat.format( new Date() ) );
+        py2.setName("PU1_"+customer.getIdfszn()+"_"+customer.getIdnum()+"_1_2022_"+dateFormat.format( new Date() ));
+        System.out.println(py2.getName() );
         py2.setCustomer(customer);
         py2Service.save(py2);
         System.out.println(py2.toString());
         return "customer/py2";
     }
+
+
+
+
+
+
+
+
+
 }

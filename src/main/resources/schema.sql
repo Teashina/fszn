@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS employee
     --   FOREIGN KEY (role_id) REFERENCES role (id)
 );
 
-);
+
 
 
 
@@ -96,4 +96,76 @@ CREATE TABLE IF NOT EXISTS user_role
     roles   VARCHAR(20),
 
     FOREIGN KEY (user_id) REFERENCES customer (id) ON DELETE CASCADE
+);
+
+
+DROP TABLE IF EXISTS py3;
+CREATE TABLE IF NOT EXISTS py3(
+                                  id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                                  name VARCHAR(50) NOT NULL,
+                                  reason_code VARCHAR(20) NOT NULL,
+                                  sum_money INT NOT NULL,
+                                  sum_chil INT NOT NULL,
+                                  fear_money_worker INT NOT NULL,
+                                  fear_money_pens INT NOT NULL,
+                                  fear_money_social INT NOT NULL,
+                                  sum_paid_worker INT NOT NULL,
+                                  sum_paid_сustom INT NOT NULL,
+                                  fear_money_worke_per INT NOT NULL,
+                                  fear_money_pens_per INT NOT NULL,
+                                  fear_money_socia_per INT NOT NULL,
+                                  customer_id BIGINT NOT NULL,
+                                  FOREIGN KEY(customer_id) REFERENCES customer(id) ON DELETE CASCADE
+
+);
+
+DROP TABLE IF EXISTS
+    dates;
+CREATE TABLE IF NOT EXISTS dates(
+                                    id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                                    date_start DATE NOT NULL,
+                                    date_end DATE NOT NULL,
+                                    act VARCHAR(50) NOT NULL,
+                                    py3_id BIGINT NOT NULL,
+                                    FOREIGN KEY(py3_id) REFERENCES py3(id) ON DELETE CASCADE
+);
+DROP TABLE IF EXISTS money_curse;
+CREATE TABLE IF NOT EXISTS money_curse(
+                                          id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                                          for_fiz_face INT NOT NULL,
+                                          for_ip INT NOT NULL,
+                                          work_day INT NOT NULL
+);
+DROP TABLE IF EXISTS py2;
+CREATE TABLE IF NOT EXISTS py2(
+                                  id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                                  name VARCHAR(50) NOT NULL,
+                                  reason VARCHAR(20) NOT NULL,
+                                  date_start VARCHAR(50) NOT NULL,
+                                  date_end VARCHAR(100) NOT NULL,
+                                  pr_number VARCHAR(50) NOT NULL,
+                                  pr_data VARCHAR(50) NOT NULL,
+                                  codd VARCHAR(50) NOT NULL,
+                                  customer_id BIGINT NOT NULL,
+                                  FOREIGN KEY(customer_id) REFERENCES customer(id) ON DELETE CASCADE
+
+);
+DROP TABLE IF EXISTS py1;
+CREATE TABLE IF NOT EXISTS py1(
+                                  id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                                  name VARCHAR(50) NOT NULL,
+                                  citizenship VARCHAR(20) NOT NULL,
+                                  date_of_birth DATE NOT NULL,
+                                  sity_of_birth VARCHAR(100),
+                                  area_of_birth VARCHAR(50),
+                                  country VARCHAR(50) NOT NULL,
+                                  sex VARCHAR(50) NOT NULL,
+                                  address VARCHAR(50),
+                                  indeks VARCHAR(50),
+                                  telephone VARCHAR(50),
+                                  telephone_home VARCHAR(50),
+                                  series VARCHAR(2),
+                                  num VARCHAR(20),
+                                  customer_id BIGINT NOT NULL,
+                                  FOREIGN KEY(customer_id) REFERENCES customer(id) ON DELETE CASCADE
 );

@@ -27,6 +27,9 @@ public class PY1 {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "name")
+    private String name;
+
     @Past(message = "Дата рождения должна быть пораньше")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "date_of_birth")
@@ -215,6 +218,14 @@ public class PY1 {
         this.customer = customer;
     }
 
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     @Override
     public String toString() {

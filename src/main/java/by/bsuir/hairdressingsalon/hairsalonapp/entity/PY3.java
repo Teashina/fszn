@@ -26,6 +26,9 @@ public class PY3 {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "name")
+    private String name;
+
 
     @Size(min = 2, message = "Длина должна быть минимум 2 символа")
     @Column(name = "reason_code", nullable = false)
@@ -82,6 +85,14 @@ public class PY3 {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     /*  @JsonManagedReference

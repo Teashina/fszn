@@ -1,8 +1,10 @@
 package by.bsuir.hairdressingsalon.hairsalonapp.controller;
 
 
+import by.bsuir.hairdressingsalon.hairsalonapp.Mailer.CreatingTXT;
 import by.bsuir.hairdressingsalon.hairsalonapp.entity.Customer;
 import by.bsuir.hairdressingsalon.hairsalonapp.entity.PY1;
+import by.bsuir.hairdressingsalon.hairsalonapp.entity.ProcedureAppointment;
 import by.bsuir.hairdressingsalon.hairsalonapp.service.*;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -10,10 +12,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Controller
 @PreAuthorize(value = "hasAuthority('USER')")
@@ -55,9 +63,21 @@ public class Py1Controller {
         }
 
         System.out.println("сработало после всратыша");
+        System.out.println("сработало после всратыша");
+        SimpleDateFormat dateFormat = null;
+        dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+
+        System.out.println(dateFormat.format( new Date() ) );
+        py1.setName("PU1_"+customer.getIdfszn()+"_"+customer.getIdnum()+"_1_2022_"+dateFormat.format( new Date() ));
         py1.setCustomer(customer);
         py1Service.save(py1);
         System.out.println(py1.toString());
         return "customer/py1";
     }
+
+
+
+
+
+
 }
