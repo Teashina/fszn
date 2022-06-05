@@ -15,6 +15,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.text.SimpleDateFormat;
@@ -81,7 +82,12 @@ public class Py3Controller {
 
 
 
+    @GetMapping("/py3/delete/{id}")
+    public String cancelAppointment(@PathVariable Long id) {
+        py3Service.deleteById(id);
 
+        return "redirect:/profile";
+    }
 
 
 

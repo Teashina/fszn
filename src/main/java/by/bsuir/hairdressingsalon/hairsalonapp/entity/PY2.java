@@ -60,6 +60,84 @@ public class PY2 {
     @Column(name = "codd")
     private String codd;
 
+    @Column(name = "codegone")
+    private String codegone;
+
+    @Column(name = "numprik2")
+    private String numprik2;
+
+    @PastOrPresent(message = "Дата должна быть пораньше")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Column(name = "datrprk2")
+    private LocalDate datrprk2;
+
+    @PastOrPresent(message = "Дата должна быть пораньше")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Column(name = "dategote")
+    private LocalDate dategote;
+
+    @PastOrPresent(message = "Дата должна быть пораньше")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Column(name = "dataprik")
+    private LocalDate dataprik;
+
+
+    @Column(name = "codework")
+    private String CodeWork;
+
+    @Column(name = "dolgname")
+    private String dolgName;
+
+    @Column(name = "strackname")
+    private String strackName;
+
+    @Column(name = "numprikk")
+    private String numprikk;
+
+    @Column(name = "codetrud")
+    private String codetrud;
+
+    @Column(name = "nummprik")
+    private String nummprik;
+
+    @Column(name = "priiknam")
+    private String priiknam;
+
+    @Column(name = "mrazrad")
+    private String mrazrad;
+
+    @Column(name = "kvalkat")
+    private String KvalKat;
+
+    @PastOrPresent(message = "Дата должна быть пораньше")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Column(name = "dataper")
+    private LocalDate dataper;
+
+    @PastOrPresent(message = "Дата должна быть пораньше")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Column(name = "dataprikz")
+    private LocalDate dataprikz;
+
+    @PastOrPresent(message = "Дата должна быть пораньше")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Column(name = "dategett")
+    private LocalDate dateGett;
+
+    @PastOrPresent(message = "Дата должна быть пораньше")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Column(name = "datepriik")
+    private LocalDate datepriik;
+
+
+
+
+
+
+
+
+
+
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "customer_id")

@@ -189,9 +189,9 @@ public class DownloadController {
         maps.put("datrBirth", String.valueOf(py1.getDate_of_birth()));
         maps.put("sity", py1.getSity_of_birth() );
         maps.put("contr", py1.getCountry() );
-        maps.put("dategive", "тут типа дата" );
+        maps.put("dategive", String.valueOf(py1.getDate_vidachi()));
         maps.put("indNum", customer.getInsurance());
-        maps.put("rovd", "тут типа ровд");
+        maps.put("rovd", py1.getKem_vidan());
         maps.put("index", py1.getIndeks() );
         maps.put("adress", py1.getAddress() );
         maps.put("specTel", py1.getTelephone());
@@ -300,12 +300,12 @@ public class DownloadController {
         maps.put("ip.name", customer.getIpname());
         maps.put("surname", customer.getSurname());
         maps.put("secname", customer.getSecname());
-        maps.put("straxnum", "1234");
-        maps.put("datestart", "1234");
-        maps.put("dateprk", "1234");
-        maps.put("numprik", "1234");
-        maps.put("dategone}", "1234");
-        maps.put("datrprk2", "1234");
+        maps.put("straxnum", customer.getInsurance());
+        maps.put("datestart", String.valueOf(py2.getDate_start()));
+        maps.put("dateprk", String.valueOf(py2.getPr_data()));
+        maps.put("numprik", py2.getPr_number());
+        maps.put("dategone}", String.valueOf(py2.getDate_end()));
+        maps.put("datrprk2", "f");
         maps.put("numprik2", "1234");
         maps.put("codegone", "1234");
         maps.put("CodeWork", "1234");
@@ -406,16 +406,79 @@ public class DownloadController {
 
 
     @GetMapping("/download/wordpy3/{id}")
-    public void downloadWord3(@PathVariable Long id, HttpServletResponse response) throws IOException {
+    public void downloadWord3(@AuthenticationPrincipal Customer customer, @PathVariable Long id, HttpServletResponse response) throws IOException {
 
         PY3 py3 = py3Service
                 .getPY3ById(id)
                 .orElseThrow();
 
-        CreatingTXT creatingTXT = new CreatingTXT();
 
-        File file = new File("C:\\Users\\Varvara\\OneDrive\\Рабочий стол\\fszn\\src\\main\\resources\\purchase_order.pdf");
-        //File file = creatingTXT.CreateFileTXT();
+
+        String log4jConfPath = "src/main/resources/log4j.properties";
+        PropertyConfigurator.configure(log4jConfPath);
+        BasicConfigurator.configure();
+
+        String templateDoc = docxPath + "PY3.docx";
+        String outputDoc = resourcesPath + "output//PY3.docx";
+
+        //String templateDoc = docxPath + "template.docx";
+        //String outputDoc = resourcesPath + "output//PY1_R.docx";
+
+        HashMap<String, String> maps = new HashMap<>();
+        maps.put("name", "Mary");
+        maps.put("how", "How about you?");
+        maps.put("me", "Me too.");
+        maps.put("id.num", "что-то");
+        maps.put("packname", "что-то");
+        maps.put("id.fszn", customer.getIdfszn());
+        maps.put("ip.name", customer.getIpname());
+        maps.put("surname", customer.getSurname());
+        maps.put("secname", customer.getSecname());
+        maps.put("dohod", "1234");
+        maps.put("nachisleno", "1234");
+        maps.put("yplaceno", "1234");
+        maps.put("phone", "1234");
+        maps.put("insurance", "1234");
+        maps.put("viplatY", "1234");
+        maps.put("viplatF", "1234");
+        maps.put("viplatM", "1234");
+        maps.put("viplatI", "1234");
+        maps.put("nacVZpY", "1234");
+        maps.put("nacVZpF", "1234");
+        maps.put("nacVZpM", "1234");
+        maps.put("nacVZpI", "1234");
+        maps.put("nacVZSY", "1234");
+        maps.put("nacVZSF", "1234");
+        maps.put("nacVZSM", "1234");
+        maps.put("nacVZSI", "1234");
+        maps.put("yplPlatY", "1234");
+        maps.put("yplPlatF", "1234");
+        maps.put("yplPlatM", "1234");
+        maps.put("yplPlatI", "1234");
+        maps.put("perDat1", "1234");
+        maps.put("perDat11", "1234");
+        maps.put("res1", "1234");
+        maps.put("perDat2", "1234");
+        maps.put("perDat22", "1234");
+        maps.put("res2}", "1234");
+        maps.put("todayDate", "1234");
+        maps.put("tel", "1234");
+
+
+
+
+
+
+
+
+        System.out.println("Replacing is started.");
+
+        ReplaceVariables.replace(templateDoc, outputDoc, maps);
+
+        System.out.println("Replacing is finished.");
+
+
+        File file = new File("src/main/resources/output/PY3.docx");
 
         if (file.getName().indexOf(".txt")>-1) response.setContentType("application/txt");
         if (file.getName().indexOf(".pdf")>-1) response.setContentType("application/pdf");

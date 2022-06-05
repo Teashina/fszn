@@ -75,7 +75,12 @@ public class Py1Controller {
         return "customer/profile";
     }
 
+    @GetMapping("/py1/delete/{id}")
+    public String cancelPY(@PathVariable Long id) {
+        py1Service.deleteById(id);
 
+        return "redirect:/profile";
+    }
 
 
 

@@ -88,6 +88,12 @@ public class Py2Controller {
         return "customer/profile";
     }
 
+    @GetMapping("/py2/delete/{id}")
+    public String cancelPY(@PathVariable Long id) {
+        py2Service.deleteById(id);
+
+        return "redirect:/profile";
+    }
 
 
 

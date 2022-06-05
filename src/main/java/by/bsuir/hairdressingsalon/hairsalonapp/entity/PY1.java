@@ -86,6 +86,19 @@ public class PY1 {
     private String num;
 
 
+    @Past(message = "Дата выдачи не может быть быть в будущем")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Column(name = "date_vidachi")
+    private LocalDate date_vidachi;
+
+    @Size(min = 3, message = "Длина должна быть минимум 3 символа")
+    @Column(name = "kem_vidan")
+    private String kem_vidan;
+
+
+
+
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "customer_id")
     private Customer customer;
@@ -109,6 +122,22 @@ public class PY1 {
 
 
     */
+
+    public LocalDate getDate_vidachi() {
+        return date_vidachi;
+    }
+
+    public void setDate_vidachi(LocalDate date_vidachi) {
+        this.date_vidachi = date_vidachi;
+    }
+
+    public String getKem_vidan() {
+        return kem_vidan;
+    }
+
+    public void setKem_vidan(String kem_vidan) {
+        this.kem_vidan = kem_vidan;
+    }
 
     public PY1(Long id) {
         this.id = id;
