@@ -72,7 +72,7 @@ public class Py1Controller {
         py1.setCustomer(customer);
         py1Service.save(py1);
         System.out.println(py1.toString());
-        return "customer/py1";
+        return "customer/profile";
     }
 
 

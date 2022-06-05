@@ -85,7 +85,7 @@ public class Py2Controller {
         py2.setCustomer(customer);
         py2Service.save(py2);
         System.out.println(py2.toString());
-        return "customer/py2";
+        return "customer/profile";
     }
 
 

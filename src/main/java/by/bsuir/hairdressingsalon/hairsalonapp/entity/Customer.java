@@ -141,4 +141,52 @@ public class Customer implements UserDetails {
     public boolean isEnabled() {
         return this.isActive();
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public String getSecname() {
+        return secname;
+    }
+
+    public String getIdnum() {
+        return idnum;
+    }
+
+    public String getIdfszn() {
+        return idfszn;
+    }
+
+    public String getIpname() {
+        return ipname;
+    }
+
+    public String getInsurance() {
+        return insurance;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
 }
