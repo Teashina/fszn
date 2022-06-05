@@ -86,9 +86,42 @@ public class DoxController {
     }
 
 
-    @GetMapping("/py1word")
+    @GetMapping("/py1Rword/{id}")
     public @ResponseBody
-    ResponseEntity<String> createWordPY1(@AuthenticationPrincipal Customer customer, Model model) throws DocumentException, IOException {
+    ResponseEntity<String> createWordPY1R(@AuthenticationPrincipal Customer customer, Model model) throws DocumentException, IOException {
+
+        model.addAttribute("customer", customer);
+
+        String email = customer.getEmail();
+
+        String log4jConfPath = "src/main/resources/log4j.properties";
+        PropertyConfigurator.configure(log4jConfPath);
+        BasicConfigurator.configure();
+
+        String templateDoc = docxPath + "PY1_R.docx";
+        String outputDoc = resourcesPath + "output//.docx";
+
+        HashMap<String, String> maps = new HashMap<>();
+        maps.put("id.num ", customer.getIdnum());
+        maps.put("id.numfn", customer.getIdfszn());
+        maps.put("ip.name", customer.getIpname());
+        maps.put("surname", customer.getSurname());
+        maps.put("secname", customer.getSecname());
+
+
+
+        System.out.println("Replacing is started.");
+
+        ReplaceVariables.replace(templateDoc, outputDoc, maps);
+
+        System.out.println("Replacing is finished.");
+
+        return new ResponseEntity<>("Ворд создан", HttpStatus.OK);
+    }
+
+    @GetMapping("/py1Vword")
+    public @ResponseBody
+    ResponseEntity<String> createWordPY1V(@AuthenticationPrincipal Customer customer, Model model) throws DocumentException, IOException {
 
         model.addAttribute("customer", customer);
         String email = customer.getEmail();
@@ -113,6 +146,7 @@ public class DoxController {
 
         return new ResponseEntity<>("Ворд создан", HttpStatus.OK);
     }
+
 
     @GetMapping("/py2word")
     public @ResponseBody
