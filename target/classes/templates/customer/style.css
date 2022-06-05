@@ -1,0 +1,216 @@
+body {
+    font-size: 20px;
+}
+
+.one {
+    width: 1440px;
+    margin: 40px auto;
+}
+.kek {
+    width: 1440px;
+    margin: 0 auto;
+}
+.title{
+    margin-top: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+.page1{
+    background-color: #fff;
+    width: 1000px;
+    margin: 0  auto;
+    margin-bottom: 20px;
+    height: 1200px;
+}
+.page2{
+    position: relative;
+    height: 1200px;
+    padding-top: 20px;
+    background-color: #fff;
+    width: 1000px;
+    margin: 0  auto;
+}
+.info{
+    display: block;
+    border: 2px black solid;
+    width: 920px;
+    margin: 0 auto;
+    height: 170px;
+}
+.info_ind{
+    font-weight: 500;
+    font-size: 20px;
+    margin-left: 40px;
+    margin-top: 15px;
+}
+.title{
+    width: 995px;
+    margin: 0 auto;
+}
+.numPack{
+    margin-top: 20px;
+    width: 920px;
+    margin-left: 40px;
+    font-size: 20px;
+}
+.table{
+    margin: 0 auto;
+    width: 920px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+table, th, td {
+    font-weight: 700;
+    line-height: 30px;
+
+    border: 3px solid #0078D7;
+
+}
+.sub_info{
+    width: 920px;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.table2{
+    width: 920px;
+    margin-top: 40px;
+
+}
+.table2 table, th, td {
+    font-weight: 500;
+    line-height: 30px;
+    border: 1px solid #0078D7;
+    border-collapse: collapse;
+
+}
+.credo {
+    width: 920px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 40px 0;
+}
+
+.credo_item {
+    margin-top: 30px;
+    text-decoration: underline  ;
+}
+.credo_itemS {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    text-decoration: underline  ;
+}
+
+.page2_title {
+    text-align: center;
+    font-weight: 700;
+}
+
+.type{
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    border: black 2px solid;
+    width: 300px;
+    height: 100px;
+    margin-left: 600px;
+    margin-top: 30px;
+}
+.aboutInfo  {
+    width: 920px;
+    margin: 0 auto;
+}
+.a {
+    margin-top: 20px;
+}
+.sex {
+    margin-top: 20px;
+}
+.placeBirth {
+    font-weight: 700;
+}
+.placeBirth p {
+    margin-left: 15px;
+    font-weight: 500;
+}
+.pasport {
+    width: 920px;
+    margin: 0 auto;
+    margin-left: 20px;
+}
+.titleO {
+    font-weight: 700;
+
+}
+.pasport_item {
+    margin-top: 20px;
+    font-size: 20px;
+}
+.aboutPasportbord {
+    border: 2px black solid;
+}
+.aboutPasportTitle{
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.adr {
+    width: 150px;
+}
+.index {
+    width: 170px;
+}
+.page3{
+    background-color: #fff;
+    width: 1500px;
+    margin: 0  auto;
+    margin-bottom: 20px;
+    height: 900px;
+}
+.p3firstBl {
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+
+}
+.p3title{
+    text-align: center;
+    font-size: 20px;
+}
+.p3Info {
+    margin-top: 20px;
+}
+.p3item {
+    margin-top: 10px;
+}
+.table31 {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+.table32 {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+.table32 table {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.table41 table {
+    width: 1200px;
+    margin: 0 auto;
+
+}
+.table41 {
+    width: 1200px;
+}
+.tbll{
+    width: 1200px;
+    margin: 0 auto;
+}
+.news {
+    width: 1000px;
+    margin: 0 auto;
+}

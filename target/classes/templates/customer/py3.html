@@ -1,0 +1,345 @@
+<html lang="RU"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:th="https://www.thymeleaf.org">
+<link rel="stylesheet" href="style.css">
+<head th:replace="~{fragments/head :: headFragment}">
+    <title id="pageTitle">Home Page</title>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+<div th:remove="tag" th:replace="~{fragments/navbar :: navbar}"></div>
+<br>
+<br>
+<form method="post" th:action="@{/createPY3}" th:object="${py3}">
+
+
+    <div class="form-group">
+        <label for="сod-selector">Выбрать процедуру</label>
+        <select class="form-control" id="сod-selector" name="" th:field="*{reason_code}">
+            <option value="0">01 работающие на основе трудового договора</option>
+            <option value="1">03 работающие на основе гражданско-правовых договоров у юр.лиц и ИП</option>
+            <option value="2">04 безработные, выполняющие общественные работы</option>
+            <option value="3">05 осуждённые к лишению свободы на определённый срок</option>
+            <option value="4">06 не работающие по трудовом договору, гражданско-правовому договору, и получающие пособия по временной нетрудоспособности</option>
+            <option value="">07 государственные служащие</option>
+            <option value="">08 не работающие инвалиды, не достигшие пенсионного возраста, получающие ежемесячную страховую выплату</option>
+            <option value="">09 получающие пособие по временной нетрудоспособности в связи со страховым случаем, получающие доплату до среднемесячного заработка</option>
+            <option value="">10 индивидуальный предприниматель</option>
+            <option value="">11 гражданин, выполняющий работу по гражданско-правовому договору у физ. лица</option>
+            <option value="">12 творческий работник</option>
+            <option value="">13 нотариус</option>
+            <option value="">14 физ. Лицо, осуществляющее виды ремесленной деятельности по </option>
+            <option value="">15 Гражданин, работающий за пределами РБ</option>
+            <option value="">16 Гражданин, работающий в представительствах межд. организаций в РБ</option>
+            <option value="">17 Адвокаты</option>
+            <option value="">18 оказывающие услуги в сфере агроэкотуризма без гос. регистрации в качестве ИП</option>
+            <option value="">19 граждане, работающие в РБ, участвующие в реализации программ и проектов МТП ЕС</option>
+        </select>
+    </div>
+
+<table class="kek">
+    <tr>
+        <td>Месяц</td>
+        <td class="2">Сумма выплат на которые <br>
+            начислены страховые взносы</td>
+        <td class="12">Количество рабочих дней</td>
+        <td class="13">Минимальный доход</td>
+        <td class="4">Сумма страховых взносов <br>работнику</td>
+        <td class="5">Сумма страховых взносов<br> пенсионное страхование </td>
+        <td class="6">Сумма страховых взносов<br> социальное страхование</td>
+        <td class="7">Сумма уплаченных взносов<br> работником</td>
+        <td class="8">Сумма уплаченных взносов<br> плательщиком</td>
+        <td class="9">Размер страховых взносов<br> пенсионное страхование</td>
+        <td class="10">Размер страховых взносов<br> социальное страхование</td>
+        <td class="11">Размер страховых взносов<br> работнику</td>
+
+    </tr>
+    <tr>
+        <td>Январь</td>
+        <td id="onekek">0</td>
+        <td><input type="text" name="" id="one" th:field="*{sum_chil}"></td>
+        <td>400</td>
+        <td>0</td>
+        <td id="onepen">0</td>
+        <td id="onesoc">0</td>
+        <td>0</td>
+        <td id="onelol">0</td>
+        <td>29%</td>
+        <td>6%</td>
+        <td>0%</td>
+
+    </tr>
+    <tr>
+        <td>Февраль</td>
+        <td id="twokek">0</td>
+        <td><input type="text" name="" id="two"></td>
+        <td>400</td>
+        <td>0</td>
+        <td id="twopen">0</td>
+        <td id="twosoc">0</td>
+        <td>0</td>
+        <td id="twolol">0</td>
+        <td>29%</td>
+        <td>6%</td>
+        <td>0%</td>
+    </tr>
+    <tr>
+        <td>Март</td>
+        <td id="threekek">0</td>
+        <td><input type="text" name="" id="three"></td>
+        <td>400</td>
+        <td>0</td>
+        <td id="threepen">0</td>
+        <td id="threesoc">0</td>
+        <td>0</td>
+        <td id="threelol">0</td>
+        <td>29%</td>
+        <td>6%</td>
+        <td>0%</td>
+    </tr>
+    <tr>
+        <td>Апрель</td>
+        <td>0</td>
+        <td><input type="text" name="" id=""></td>
+        <td>400</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>29%</td>
+        <td>6%</td>
+        <td>0%</td>
+
+    </tr>
+    <tr>
+        <td>Май</td>
+        <td>0</td>
+        <td><input type="text" name="" id=""></td>
+        <td>400</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>29%</td>
+        <td>6%</td>
+        <td>0%</td>
+
+    </tr>
+    <tr>
+        <td>Июнь</td>
+        <td>0</td>
+        <td><input type="text" name="" id=""></td>
+        <td>400</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>29%</td>
+        <td>6%</td>
+        <td>0%</td>
+
+    </tr>
+    <tr>
+        <td>Июль</td>
+        <td>0</td>
+        <td><input type="text" name="" id=""></td>
+        <td>400</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>29%</td>
+        <td>6%</td>
+        <td>0%</td>
+
+    </tr>
+    <tr>
+        <td>Август</td>
+        <td>0</td>
+        <td><input type="text" name="" id=""></td>
+        <td>400</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>29%</td>
+        <td>6%</td>
+        <td>0%</td>
+
+    </tr>
+    <tr>
+        <td>Сентябрь</td>
+        <td>0</td>
+        <td><input type="text" name="" id=""></td>
+        <td>417,86</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>29%</td>
+        <td>6%</td>
+        <td>0%</td>
+
+    </tr>
+    <tr>
+        <td>Октябрь</td>
+        <td>0</td>
+        <td><input type="text" name="" id=""></td>
+        <td>418,14</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>29%</td>
+        <td>6%</td>
+        <td>0%</td>
+
+    </tr>
+    <tr>
+        <td>Ноябрь</td>
+        <td>0</td>
+        <td><input type="text" name="" id=""></td>
+        <td>418,14</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>29%</td>
+        <td>6%</td>
+        <td>0%</td>
+
+    </tr>
+    <tr>
+        <td>Декабрь</td>
+        <td>0</td>
+        <td><input type="text" name="" id=""></td>
+        <td>418,14</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>29%</td>
+        <td>6%</td>
+        <td>0%</td>
+
+    </tr>
+    <tr>
+        <td>Итого</td>
+        <td id="itog">0</td>
+        <td id="days">0</td>
+        <td></td>
+        <td>0</td>
+        <td id="itogpen">0</td>
+        <td id="itogsoc">0</td>
+        <td>0</td>
+        <td id="itoglol">0</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<script type="text/javascript">const Yanvar = document.querySelector('#one'),
+    YanvarAll = document.querySelector('#onekek'),
+    YanvarPen = document.querySelector('#onepen'),
+    YanvarSoc = document.querySelector('#onesoc'),
+    YanvarAllto = document.querySelector('#onelol'),
+    Febr = document.querySelector('#two'),
+    FebrAll = document.querySelector('#twokek'),
+    FebrPen = document.querySelector('#twopen'),
+    FebrSoc = document.querySelector('#twosoc'),
+    FebrAllto = document.querySelector('#twolol'),
+    March = document.querySelector('#three'),
+    MarchAll = document.querySelector('#threekek'),
+    MarchPen = document.querySelector('#threepen'),
+    MarchSoc = document.querySelector('#threesoc'),
+    MarchAllto = document.querySelector('#threelol'),
+    itog = document.querySelector('#itog'),
+    itogAll = document.querySelector('#itogkek'),
+    itogPen = document.querySelector('#itogpen'),
+    itogSoc = document.querySelector('#itogsoc'),
+    itogAllto = document.querySelector('#itoglol');
+
+let x = 0,//all done
+    x2 = 0, x3 = 0, x4 = 0,
+    y = 0,//pen done
+    y2 = 0, y3 = 0, y4 = 0,
+    z = 0,//soc
+    z2 = 0, z3 = 0, z4 = 0,
+    v = 0,//all2
+    v2 = 0, v3 = 0, v4 = 0,
+    d = 0;//days
+Yanvar.addEventListener('input', () => {
+    YanvarAll.innerHTML = Math.round(Yanvar.value * 400 / 31);
+    x =  x - x2 + Math.round(Yanvar.value * 400 / 31);
+    itog.innerHTML = x;
+    x2 =  Math.round(Yanvar.value * 400 / 31);
+    YanvarPen.innerHTML = Math.round(Yanvar.value * 400 / 31 * 0.29);
+    y =  y - y2 + Math.round(Yanvar.value * 400 / 31 * 0.29);
+    itogPen.innerHTML = y;
+    y2 =  Math.round(Yanvar.value * 400 / 31 * 0.29);
+    YanvarSoc.innerHTML = Math.round(Yanvar.value * 400 / 31 * 0.06);
+    z =  z - z2 + Math.round(Yanvar.value * 400 / 31 * 0.06);
+    itogSoc.innerHTML = z;
+    z2 =  Math.round(Yanvar.value * 400 / 31 * 0.06);
+    YanvarAllto.innerHTML = Math.round((Yanvar.value * 400 / 31 * 0.29) + (Yanvar.value * 400 / 31 * 0.06));
+    v =  v - v2 + Math.round((Yanvar.value * 400 / 31 * 0.29) + (Yanvar.value * 400 / 31 * 0.06));
+    itogAllto.innerHTML = v;
+    v2 = Math.round((Yanvar.value * 400 / 31 * 0.29) + (Yanvar.value * 400 / 31 * 0.06));
+
+
+});
+Febr.addEventListener('input', () => {
+    FebrAll.innerHTML = Math.round(Febr.value * 400 / 28);
+    x =  x - x3 + Math.round(Febr.value * 400 / 28);
+    itog.innerHTML = x;
+    x3 = Math.round(Febr.value * 400 / 28);
+    FebrPen.innerHTML = Math.round(Febr.value * 400 / 28 * 0.29);
+    y =  y - y3 + Math.round(Febr.value * 400 / 28 * 0.29);
+    itogPen.innerHTML = y;
+    y3 = Math.round(Febr.value * 400 / 28 * 0.29);
+    FebrSoc.innerHTML = Math.round(Febr.value * 400 / 28 * 0.06);
+    z =  z - z3 + Math.round(Febr.value * 400 / 28 * 0.06);
+    itogSoc.innerHTML = z;
+    z3 = Math.round(Febr.value * 400 / 28 * 0.06);
+    FebrAllto.innerHTML = Math.round((Febr.value * 400 / 28 * 0.29) + (Febr.value * 400 / 28 * 0.06));
+    v =  v - v3 + Math.round((Febr.value * 400 / 28 * 0.29) + (Febr.value * 400 / 28 * 0.06));
+    itogAllto.innerHTML = v;
+    v3 = Math.round((Febr.value * 400 / 28 * 0.29) + (Febr.value * 400 / 28 * 0.06));
+});
+March.addEventListener('input', () => {
+    MarchAll.innerHTML = Math.round(March.value * 400 / 31);
+    x =  x - x4 + Math.round(March.value * 400 / 31);
+    itog.innerHTML = x;
+    x4 = Math.round(March.value * 400 / 31);
+    MarchPen.innerHTML = Math.round(March.value * 400 / 31 * 0.29);
+    y =  y - y4 + Math.round(March.value * 400 / 31 * 0.29);
+    itogPen.innerHTML = y;
+    y4 = Math.round(March.value * 400 / 31 * 0.29);
+    MarchSoc.innerHTML = Math.round(March.value * 400 / 31 * 0.06);
+    z =  z - z4 + Math.round(March.value * 400 / 31 * 0.06);
+    itogSoc.innerHTML = z;
+    z4 = Math.round(March.value * 400 / 31 * 0.06);
+    MarchAllto.innerHTML = Math.round((March.value * 400 / 31 * 0.29) + (March.value * 400 / 31 * 0.06));
+    v =  v - v4 + Math.round((March.value * 400 / 31 * 0.29) + (March.value * 400 / 31 * 0.06));
+    itogAllto.innerHTML = v;
+    v4 = Math.round((March.value * 400 / 31 * 0.29) + (March.value * 400 / 31 * 0.06));
+});
+
+
+</script>
+    <button class="btn btn-primary" type="submit"> Создать ПУ-3</button>
+</form>
+</body>
+<script src="script.js"></script>
+</html>

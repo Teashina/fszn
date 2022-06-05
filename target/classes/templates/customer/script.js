@@ -1,0 +1,83 @@
+const Yanvar = document.querySelector('#one'),
+      YanvarAll = document.querySelector('#onekek'),
+      YanvarPen = document.querySelector('#onepen'),
+      YanvarSoc = document.querySelector('#onesoc'),
+      YanvarAllto = document.querySelector('#onelol'),
+      Febr = document.querySelector('#two'),
+      FebrAll = document.querySelector('#twokek'),
+      FebrPen = document.querySelector('#twopen'),
+      FebrSoc = document.querySelector('#twosoc'),
+      FebrAllto = document.querySelector('#twolol'),
+      March = document.querySelector('#three'),
+      MarchAll = document.querySelector('#threekek'),
+      MarchPen = document.querySelector('#threepen'),
+      MarchSoc = document.querySelector('#threesoc'),
+      MarchAllto = document.querySelector('#threelol'),
+      itog = document.querySelector('#itog'),
+      itogAll = document.querySelector('#itogkek'),
+      itogPen = document.querySelector('#itogpen'),
+      itogSoc = document.querySelector('#itogsoc'),
+      itogAllto = document.querySelector('#itoglol');
+let x = 0,//all done
+    x2 = 0, x3 = 0, x4 = 0,
+    y = 0,//pen done
+    y2 = 0, y3 = 0, y4 = 0,
+    z = 0,//soc
+    z2 = 0, z3 = 0, z4 = 0,
+    v = 0,//all2
+    v2 = 0, v3 = 0, v4 = 0,
+    d = 0;//days
+Yanvar.addEventListener('input', () => {
+    YanvarAll.innerHTML = Math.round(Yanvar.value * 400 / 31);
+    x =  x - x2 + Math.round(Yanvar.value * 400 / 31);
+    itog.innerHTML = x;
+    x2 =  Math.round(Yanvar.value * 400 / 31);
+    YanvarPen.innerHTML = Math.round(Yanvar.value * 400 / 31 * 0.29);
+    y =  y - y2 + Math.round(Yanvar.value * 400 / 31 * 0.29);
+    itogPen.innerHTML = y;
+    y2 =  Math.round(Yanvar.value * 400 / 31 * 0.29);
+    YanvarSoc.innerHTML = Math.round(Yanvar.value * 400 / 31 * 0.06);
+    z =  z - z2 + Math.round(Yanvar.value * 400 / 31 * 0.06);
+    itogSoc.innerHTML = z;
+    z2 =  Math.round(Yanvar.value * 400 / 31 * 0.06);
+    YanvarAllto.innerHTML = Math.round((Yanvar.value * 400 / 31 * 0.29) + (Yanvar.value * 400 / 31 * 0.06));
+    v =  v - v2 + Math.round((Yanvar.value * 400 / 31 * 0.29) + (Yanvar.value * 400 / 31 * 0.06));
+    itogAllto.innerHTML = v;
+    v2 = Math.round((Yanvar.value * 400 / 31 * 0.29) + (Yanvar.value * 400 / 31 * 0.06));
+});
+Febr.addEventListener('input', () => {
+    FebrAll.innerHTML = Math.round(Febr.value * 400 / 28);
+    x =  x - x3 + Math.round(Febr.value * 400 / 28);
+    itog.innerHTML = x;
+    x3 = Math.round(Febr.value * 400 / 28);
+    FebrPen.innerHTML = Math.round(Febr.value * 400 / 28 * 0.29);
+    y =  y - y3 + Math.round(Febr.value * 400 / 28 * 0.29);
+    itogPen.innerHTML = y;
+    y3 = Math.round(Febr.value * 400 / 28 * 0.29);
+    FebrSoc.innerHTML = Math.round(Febr.value * 400 / 28 * 0.06);
+    z =  z - z3 + Math.round(Febr.value * 400 / 28 * 0.06);
+    itogSoc.innerHTML = z;
+    z3 = Math.round(Febr.value * 400 / 28 * 0.06);
+    FebrAllto.innerHTML = Math.round((Febr.value * 400 / 28 * 0.29) + (Febr.value * 400 / 28 * 0.06));
+    v =  v - v3 + Math.round((Febr.value * 400 / 28 * 0.29) + (Febr.value * 400 / 28 * 0.06));
+    itogAllto.innerHTML = v;
+    v3 = Math.round((Febr.value * 400 / 28 * 0.29) + (Febr.value * 400 / 28 * 0.06));
+});
+March.addEventListener('input', () => {
+    MarchAll.innerHTML = Math.round(March.value * 400 / 31);
+    x =  x - x4 + Math.round(March.value * 400 / 31);
+    itog.innerHTML = x;
+    x4 = Math.round(March.value * 400 / 31);
+    MarchPen.innerHTML = Math.round(March.value * 400 / 31 * 0.29);
+    y =  y - y4 + Math.round(March.value * 400 / 31 * 0.29);
+    itogPen.innerHTML = y;
+    y4 = Math.round(March.value * 400 / 31 * 0.29);
+    MarchSoc.innerHTML = Math.round(March.value * 400 / 31 * 0.06);
+    z =  z - z4 + Math.round(March.value * 400 / 31 * 0.06);
+    itogSoc.innerHTML = z;
+    z4 = Math.round(March.value * 400 / 31 * 0.06);
+    MarchAllto.innerHTML = Math.round((March.value * 400 / 31 * 0.29) + (March.value * 400 / 31 * 0.06));
+    v =  v - v4 + Math.round((March.value * 400 / 31 * 0.29) + (March.value * 400 / 31 * 0.06));
+    itogAllto.innerHTML = v;
+    v4 = Math.round((March.value * 400 / 31 * 0.29) + (March.value * 400 / 31 * 0.06));
+});
