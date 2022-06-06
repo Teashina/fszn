@@ -31,40 +31,40 @@ public class PY3 {
 
 
     @Size(min = 2, message = "Длина должна быть минимум 2 символа")
-    @Column(name = "reason_code", nullable = false)
+    @Column(name = "reason_code")
     private String reason_code;
 
 
-    @Column(name = "sum_money", nullable = false)
-    private Long sum_money;
+    @Column(name = "dayy")
+    private Long dayy;
 
-    @Column(name = "sum_chil", nullable = false)
-    private Long sum_chil;
+    @Column(name = "dayf")
+    private Long dayf;
 
-    @Column(name = "fear_money_worker", nullable = false)
-    private Long fear_money_worker;
+    @Column(name = "daym")
+    private Long daym;
 
-    @Column(name = "fear_money_pens", nullable = false)
-    private Long fear_money_pens;
+    @Column(name = "daya")
+    private Long daya;
 
-    @Column(name = "fear_money_social", nullable = false)
-    private Long fear_money_social;
+    @Column(name = "daymay")
+    private Long daymay;
 
-    @Column(name = "sum_paid_worker", nullable = false)
-    private Long sum_paid_worker;
+    @Column(name = "dayjn")
+    private Long dayjn;
 
-    @Column(name = "sum_paid_сustom", nullable = false)
-    private Long sum_paid_сustom;
+    @Column(name = "dayjl")
+    private Long dayjl;
 
-    @Column(name = "fear_money_worke_per", nullable = false)
-    private Long fear_money_worke_per;
+    @Column(name = "dayag")
+    private Long dayag;
 
 
-    @Column(name = "fear_money_pens_per", nullable = false)
-    private Long fear_money_pens_per;
+    @Column(name = "days")
+    private Long days;
 
-    @Column(name = "fear_money_socia_per", nullable = false)
-    private Long fear_money_socia_per;
+    @Column(name = "dayo")
+    private Long dayo;
 
 
 

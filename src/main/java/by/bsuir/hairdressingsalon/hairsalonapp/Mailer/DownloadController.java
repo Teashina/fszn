@@ -305,25 +305,25 @@ public class DownloadController {
         maps.put("dateprk", String.valueOf(py2.getPr_data()));
         maps.put("numprik", py2.getPr_number());
         maps.put("dategone}", String.valueOf(py2.getDate_end()));
-        maps.put("datrprk2", "f");
-        maps.put("numprik2", "1234");
-        maps.put("codegone", "1234");
-        maps.put("CodeWork", "1234");
-        maps.put("dolgName", "1234");
-        maps.put("strackName", "1234");
-        maps.put("dategote", "1234");
-        maps.put("dataprik", "1234");
-        maps.put("numprikk", "1234");
-        maps.put("codetrud", "1234");
-        maps.put("dataper", "1234");
-        maps.put("dataprikz", "1234");
-        maps.put("nummprik", "1234");
-        maps.put("dateGett", "1234");
-        maps.put("datepriik", "1234");
-        maps.put("priiknam", "1234");
-        maps.put("razrad", "1234");
-        maps.put("KvalKat", "1234");
-        maps.put("form", "1234");
+        maps.put("datrprk2", String.valueOf(py2.getDatrprk2()));
+        maps.put("numprik2", py2.getNumprik2());
+        maps.put("codegone", py2.getCodegone());
+        maps.put("CodeWork", py2.getCodeWork());
+        maps.put("dolgName", py2.getDolgName());
+        maps.put("strackName", py2.getStrackName());
+        maps.put("dategote", String.valueOf(py2.getDategote()));
+        maps.put("dataprik", String.valueOf(py2.getDatepriik()));
+        maps.put("numprikk", py2.getNumprikk());
+        maps.put("codetrud", py2.getCodetrud());
+        maps.put("dataper", String.valueOf(py2.getDataper()));
+        maps.put("dataprikz", String.valueOf(py2.getDataprikz()));
+        maps.put("nummprik", py2.getNummprik());
+        maps.put("dateGett", String.valueOf(py2.getDateGett()));
+        maps.put("datepriik", String.valueOf(py2.getDatepriik()));
+        maps.put("priiknam", py2.getPriiknam());
+        maps.put("mrazrad", py2.getMrazrad());
+        maps.put("KvalKat", py2.getKvalKat());
+        maps.put("form", "a");
         maps.put("todayDate", "1234");
 
 
@@ -423,6 +423,27 @@ public class DownloadController {
 
         //String templateDoc = docxPath + "template.docx";
         //String outputDoc = resourcesPath + "output//PY1_R.docx";
+        double viplatY = (400 * py3.getDayy())/31;
+        double nacVZpY = viplatY * (0.29);
+        double nacVZSY = viplatY * (0.06);
+        double yplPlatY = nacVZSY+nacVZpY;
+
+        double viplatF = (400 * py3.getDayf())/28;
+        double nacVZpF = viplatF * (0.29);
+        double nacVZSF = viplatF * (0.06);
+        double yplPlatF = nacVZSF+nacVZpF;
+
+        double viplatM = (400 * py3.getDayf())/31;
+        double nacVZpM = viplatM * (0.29);
+        double nacVZSM = viplatM * (0.06);
+        double yplPlatM = nacVZSM+nacVZpM;
+
+        double viplatI= viplatF + viplatY + viplatM;
+        double nacVZpI = nacVZpF +nacVZpM + nacVZpY ;
+        double nacVZSI = nacVZSF +nacVZSM + nacVZSY ;
+        double yplPlatI = yplPlatF + yplPlatM + yplPlatY ;
+
+
 
         HashMap<String, String> maps = new HashMap<>();
         maps.put("name", "Mary");
@@ -434,27 +455,27 @@ public class DownloadController {
         maps.put("ip.name", customer.getIpname());
         maps.put("surname", customer.getSurname());
         maps.put("secname", customer.getSecname());
-        maps.put("dohod", "1234");
-        maps.put("nachisleno", "1234");
-        maps.put("yplaceno", "1234");
-        maps.put("phone", "1234");
-        maps.put("insurance", "1234");
-        maps.put("viplatY", "1234");
-        maps.put("viplatF", "1234");
-        maps.put("viplatM", "1234");
-        maps.put("viplatI", "1234");
-        maps.put("nacVZpY", "1234");
-        maps.put("nacVZpF", "1234");
-        maps.put("nacVZpM", "1234");
-        maps.put("nacVZpI", "1234");
-        maps.put("nacVZSY", "1234");
-        maps.put("nacVZSF", "1234");
-        maps.put("nacVZSM", "1234");
-        maps.put("nacVZSI", "1234");
-        maps.put("yplPlatY", "1234");
-        maps.put("yplPlatF", "1234");
-        maps.put("yplPlatM", "1234");
-        maps.put("yplPlatI", "1234");
+        maps.put("dohod", String.valueOf(viplatI));
+        maps.put("nachisleno", String.valueOf(yplPlatI));
+        maps.put("yplaceno", String.valueOf(yplPlatI));
+        maps.put("phone", customer.getPhoneNumber());
+        maps.put("insurance", customer.getInsurance());
+        maps.put("viplatY", String.valueOf(viplatY));
+        maps.put("viplatF", String.valueOf(viplatF));
+        maps.put("viplatM", String.valueOf(viplatM));
+        maps.put("viplatI", String.valueOf(viplatI));
+        maps.put("nacVZpY", String.valueOf(nacVZpY));
+        maps.put("nacVZpF", String.valueOf(nacVZpF));
+        maps.put("nacVZpM", String.valueOf(nacVZpM));
+        maps.put("nacVZpI", String.valueOf(nacVZpI));
+        maps.put("nacVZSY", String.valueOf(nacVZSY));
+        maps.put("nacVZSF", String.valueOf(nacVZSF));
+        maps.put("nacVZSM", String.valueOf(nacVZSM));
+        maps.put("nacVZSI", String.valueOf(nacVZSI));
+        maps.put("yplPlatY", String.valueOf(yplPlatY));
+        maps.put("yplPlatF", String.valueOf(yplPlatF));
+        maps.put("yplPlatM", String.valueOf(yplPlatM));
+        maps.put("yplPlatI", String.valueOf(yplPlatI));
         maps.put("perDat1", "1234");
         maps.put("perDat11", "1234");
         maps.put("res1", "1234");
@@ -462,7 +483,7 @@ public class DownloadController {
         maps.put("perDat22", "1234");
         maps.put("res2}", "1234");
         maps.put("todayDate", "1234");
-        maps.put("tel", "1234");
+        maps.put("tel", customer.getPhoneNumber());
 
 
 
