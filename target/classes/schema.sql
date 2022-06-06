@@ -140,13 +140,38 @@ DROP TABLE IF EXISTS py2;
 CREATE TABLE IF NOT EXISTS py2(
                                   id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
                                   name VARCHAR(50) NOT NULL,
-                                  reason VARCHAR(20) NOT NULL,
+
                                   date_start VARCHAR(50) NOT NULL,
                                   date_end VARCHAR(100) NOT NULL,
                                   pr_number VARCHAR(50) NOT NULL,
                                   pr_data VARCHAR(50) NOT NULL,
                                   codd VARCHAR(50) NOT NULL,
+
+
+
+datrprk2 DATE,
+numprik2 VARCHAR(50),
+codegone VARCHAR(50),
+codework VARCHAR(50),
+dolgname VARCHAR(50),
+strackname VARCHAR(50),
+dategote DATE,
+dataprik  DATE,
+numprikk VARCHAR(50),
+codetrud VARCHAR(50),
+dataper DATE,
+dataprikz DATE,
+nummprik VARCHAR(50),
+dategett DATE,
+datepriik DATE,
+priiknam VARCHAR(50),
+mrazrad VARCHAR(50),
+kvalkat VARCHAR(50),
+
+
+
                                   customer_id BIGINT NOT NULL,
+
                                   FOREIGN KEY(customer_id) REFERENCES customer(id) ON DELETE CASCADE
 
 );
@@ -166,6 +191,8 @@ CREATE TABLE IF NOT EXISTS py1(
                                   telephone_home VARCHAR(50),
                                   series VARCHAR(2),
                                   num VARCHAR(20),
+                                  date_vidachi DATE,
+                                  kem_vidan VARCHAR(50),
                                   customer_id BIGINT NOT NULL,
                                   FOREIGN KEY(customer_id) REFERENCES customer(id) ON DELETE CASCADE
 );

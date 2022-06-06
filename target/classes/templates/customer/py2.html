@@ -27,7 +27,7 @@
 
     <form method="post" th:action="@{/createPY2}" th:object="${py2}">
             <div class="form-group col-md-6">
-                <label for="date_start">Гражданство</label>
+                <label for="date_start">Дата приёма на работу</label>
                 <input class="form-control" id="date_start"
                        placeholder="Беларусь"
 
@@ -40,32 +40,12 @@
             </div>
 
 
-            <div class="form-group col-md-6">
-                <label for="date_end">Имя</label>
-                <input class="form-control" id="date_end"
-                       placeholder="date_end"
-                       th:field="*{date_end}" type="date">
-                <label class="alert alert-danger" for="date_end"
-                       th:errors="*{date_end}"
-                       th:if="${#fields.hasErrors('date_end')}">
-                    Ошибка при вводе имени
-                </label>
-            </div>
+
+
+
 
             <div class="form-group col-md-6">
-                <label for="reason">Имя</label>
-                <input class="form-control" id="reason"
-                       placeholder="reason"
-                       th:field="*{reason}" type="text">
-                <label class="alert alert-danger" for="reason"
-                       th:errors="*{reason}"
-                       th:if="${#fields.hasErrors('reason')}">
-                    Ошибка при вводе имени
-                </label>
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="pr_number">Имя</label>
+                <label for="pr_number">Номер приказа о приёме на работу</label>
                 <input class="form-control" id="pr_number"
                        placeholder="area_of_birth"
                        th:field="*{pr_number}" type="text">
@@ -77,7 +57,7 @@
             </div>
 
             <div class="form-group col-md-6">
-                <label for="pr_data">Имя</label>
+                <label for="pr_data">Дата приказа о приёме на работу</label>
                 <input class="form-control" id="pr_data"
                        placeholder="country"
                        th:field="*{pr_data}" type="date">
@@ -88,17 +68,302 @@
                 </label>
             </div>
 
+        <div class="form-group col-md-6">
+            <label for="date_end">Дата увольнения</label>
+            <input class="form-control" id="date_end"
+                   placeholder="date_end"
+                   th:field="*{date_end}" type="date">
+            <label class="alert alert-danger" for="date_end"
+                   th:errors="*{date_end}"
+                   th:if="${#fields.hasErrors('date_end')}">
+                Ошибка при вводе имени
+            </label>
+        </div>
+
             <div class="form-group col-md-6">
-                <label for="codd">Имя</label>
-                <input class="form-control" id="codd"
-                       placeholder="codd"
-                       th:field="*{codd}" type="text">
-                <label class="alert alert-danger" for="codd"
-                       th:errors="*{codd}"
-                       th:if="${#fields.hasErrors('codd')}">
+                <label for="datrprk2">Дата приказа об увольнении</label>
+                <input class="form-control" id="datrprk2"
+                       placeholder="datrprk2"
+                       th:field="*{datrprk2}" type="date">
+                <label class="alert alert-danger" for="datrprk2"
+                       th:errors="*{datrprk2}"
+                       th:if="${#fields.hasErrors('datrprk2')}">
                     Ошибка при вводе имени
                 </label>
             </div>
+
+        <div class="form-group col-md-6">
+            <label for="numprik2">Номер приказа об увольнении</label>
+            <input class="form-control" id="numprik2"
+                   placeholder="numprik2"
+                   th:field="*{numprik2}" type="text">
+            <label class="alert alert-danger" for="numprik2"
+                   th:errors="*{numprik2}"
+                   th:if="${#fields.hasErrors('numprik2')}">
+                Ошибка при вводе имени
+            </label>
+        </div>
+
+
+        <div class="form-group col-md-6">
+            <label for="codegone">codegone</label>
+            <select class="form-control" id="codegone" name="" th:field="*{codegone}">
+                <option th:value="1">1.1 Статья 35 соглашение сторон (пункт 1 части второй) </option>
+                <option th:value="1"> 1.2 Статья 35 истечение срока действия срочного трудового договора (пункт 2 части
+                    второй)
+                </option>
+                <option th:value="1"> 1.3 Статья 35 расторжение трудового договора по желанию работника (пункт 3
+                    части второй) </option>
+                <option th:value="1">1.4 Статья 35 расторжение трудового договора по требованию работника (пункт 3
+                    части второй) </option>
+                <option th:value="1"> 1.5 Статья 35 перевод работника, с его согласия, к другому нанимателю (пункт 4
+                    части второй) </option>
+                <option th:value="1">1.6 Статья 35 переход работника на выборную должность (пункт 4 части второй) </option>
+                <option th:value="1"> 1.7 Статья 35 отказ работника от перевода на работу в другую местность вместе с
+                    нанимателем (пункт 5 части второй) </option>
+                <option th:value="1">1.8 Статья 35 отказ от продолжения работы в связи с изменением существенных
+                    условий труда (пункт 5 части второй)</option>
+                <option th:value="1"> 1.9 Статья 35 отказ от продолжения работы в связи со сменой собственника
+                    имущества и (или) реорганизацией (слиянием, присоединением,
+                    разделением, выделением, преобразованием) организации (пункт 5
+                    части второй)</option>
+                <option th:value="1">1.10 Статья 35 расторжение трудового договора с предварительным испытанием
+                    (пункт 7 части второй)
+                </option>
+                <option th:value="1">1.11 Статья 42 ликвидация организации (пункт 1)
+                </option>
+                <option th:value="1"> 1.12 Статья 42 прекращение деятельности филиала, представительства или иного
+                    обособленного подразд</option>
+                <option th:value="1"> 1.13 Статья 42 прекращение деятельности индивидуального предпринимателя (пункт
+                    1)
+                </option>
+            </select>
+            <label class="alert alert-danger" for="codegone"
+                   th:errors="*{codegone}"
+                   th:if="${#fields.hasErrors('codegone')}">
+                Ошибка при вводе имени
+            </label>
+        </div>
+
+
+
+
+
+
+        <div class="form-group col-md-6">
+            <label for="codework">Код должности служащего, профессии рабочего по Общегосударственному классификатору ОКРБ 014-2017 «Занятия»</label>
+            <select class="form-control" id="codework" name="" th:field="*{codeWork}">
+                <option th:value="1">1111	1111-001	Начальник Секретариата Палаты представителей Национального собрания Республики Беларусь	00	</option>
+                <option th:value="2">1111	1111-002	Начальник Секретариата Совета Республики Национального собрания Республики Беларусь	00	1	–	 	 </option>
+                <option th:value="3">1111	1111-003	Председатель 01 1	</option>
+                <option th:value="4">1111	1111-004	Президент Республики Беларусь	00	1	–	 	 </option>
+                <option th:value="5">1111	1111-005	Член Совета Республики Национального собрания Республики Беларусь	00	1	–	 	 </option>
+                <option th:value="6">1112	1112-001	Академик-секретарь отделения Национальной академии наук Беларуси	00	1	–	 	 </option>
+                <option th:value="7">1112	1112-002	Генеральный консул Республики Беларусь	00	1	–	 	 </option>
+                <option th:value="8">1112	1112-003	Генеральный прокурор Республики Беларусь	00	1	–	 	 </option>
+                <option th:value="9">1112	1112-004	Глава Администрации Президента Республики Беларусь	00	1	–	 	 </option>
+                <option th:value="10">1112	1112-005	Глава представительства	00	1	–	 	 </option>
+                <option th:value="11">1112	1112-006	Главный ученый секретарь Высшей аттестационной комиссии Республики Беларусь	00	1	–	 	 </option>
+                <option th:value="12">1112	1112-007	Главный ученый секретарь Национальной академии наук Беларуси	00	1	–	 	 </option>
+                <option th:value="13">1112	1112-008	Государственный секретарь Совета Безопасности Республики Беларусь	00	1	–	 	 </option>
+            </select>
+            <label class="alert alert-danger" for="codework"
+                   th:errors="*{codeWork}"
+                   th:if="${#fields.hasErrors('codeWork')}">
+                Ошибка при вводе имени
+            </label>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="dolgname">Наименование должности служащего, профессии рабочего в соответствии с квалификационными справочниками, утверждаемыми в порядке, определяемом Советом Министров Республики Беларусь, нормативными правовыми актами, регламентирующими деятельность работников по отдельным должностям служащих, и трудовым договором (полное наименование)</label>
+            <input class="form-control" id="dolgname"
+                   placeholder="dolgname"
+                   th:field="*{dolgName}" type="text">
+            <label class="alert alert-danger" for="dolgName"
+                   th:errors="*{dolgName}"
+                   th:if="${#fields.hasErrors('dolgName')}">
+                Ошибка при вводе имени
+            </label>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="strackName">Наименование структурного подразделения</label>
+            <input class="form-control" id="strackName"
+                   placeholder="strackName"
+                   th:field="*{strackName}" type="text">
+            <label class="alert alert-danger" for="strackName"
+                   th:errors="*{strackName}"
+                   th:if="${#fields.hasErrors('strackName')}">
+                Ошибка при вводе имени
+            </label>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="dategote">Дата приема (перевода, назначения) по профессии рабочего, должности служащего</label>
+            <input class="form-control" id="dategote"
+                   placeholder="dategote"
+                   th:field="*{dategote}" type="date">
+            <label class="alert alert-danger" for="dategote"
+                   th:errors="*{dategote}"
+                   th:if="${#fields.hasErrors('dategote')}">
+                Ошибка при вводе имени
+            </label>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="dataprik">Дата приказа</label>
+            <input class="form-control" id="dataprik"
+                   placeholder="reason"
+                   th:field="*{dataprik}" type="date">
+            <label class="alert alert-danger" for="dataprik"
+                   th:errors="*{dataprik}"
+                   th:if="${#fields.hasErrors('dataprik')}">
+                Ошибка при вводе имени
+            </label>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="numprikk">Номер приказа</label>
+            <input class="form-control" id="numprikk"
+                   placeholder="numprikk"
+                   th:field="*{numprikk}" type="text">
+            <label class="alert alert-danger" for="numprikk"
+                   th:errors="*{numprikk}"
+                   th:if="${#fields.hasErrors('numprikk')}">
+                Ошибка при вводе
+            </label>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="codetrud">Код вида трудового договора</label>
+            <select class="form-control" id="codetrud" name="" th:field="*{codetrud}">
+                <option th:value="1">01 - Контракт</option>
+                <option th:value="2">02 - Трудовой договор на неопределённый срок</option>
+                <option th:value="3">03 - Срочный трудовой договор</option>
+                <option th:value="4">04 - Без заключения трудового договора</option>
+            </select>
+            <label class="alert alert-danger" for="codetrud"
+                   th:errors="*{codetrud}"
+                   th:if="${#fields.hasErrors('codetrud')}">
+                Ошибка при вводе
+            </label>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="dataper">Дата увольнения (перевода) по профессии рабочего, должности служащего</label>
+            <input class="form-control" id="dataper"
+                   placeholder="dataper"
+                   th:field="*{dataper}" type="date">
+            <label class="alert alert-danger" for="dataper"
+                   th:errors="*{dataper}"
+                   th:if="${#fields.hasErrors('dataper')}">
+                Ошибка при вводе
+            </label>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="dataprikz">Дата приказа</label>
+            <input class="form-control" id="dataprikz"
+                   placeholder="dataprikz"
+                   th:field="*{dataprikz}" type="date">
+            <label class="alert alert-danger" for="dataprikz"
+                   th:errors="*{dataprikz}"
+                   th:if="${#fields.hasErrors('dataprikz')}">
+                Ошибка при вводе
+            </label>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="nummprik">Номер приказа</label>
+            <input class="form-control" id="nummprik"
+                   placeholder="nummprik"
+                   th:field="*{nummprik}" type="text">
+            <label class="alert alert-danger" for="nummprik"
+                   th:errors="*{nummprik}"
+                   th:if="${#fields.hasErrors('nummprik')}">
+                Ошибка при вводе
+            </label>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div class="form-group col-md-6">
+        <label for="dategett">Дата присвоения</label>
+        <input class="form-control" id="dategett"
+               placeholder="dategett"
+               th:field="*{dateGett}" type="date">
+        <label class="alert alert-danger" for="dategett"
+               th:errors="*{dateGett}"
+               th:if="${#fields.hasErrors('dateGett')}">
+            Ошибка при вводе
+        </label>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="datepriik">Дата приказа</label>
+            <input class="form-control" id="datepriik"
+                   placeholder="datepriik"
+                   th:field="*{datepriik}" type="date">
+            <label class="alert alert-danger" for="datepriik"
+                   th:errors="*{datepriik}"
+                   th:if="${#fields.hasErrors('datepriik')}">
+                Ошибка при вводе
+            </label>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="priiknam">Номер приказа</label>
+            <input class="form-control" id="priiknam"
+                   placeholder="priiknam"
+                   th:field="*{priiknam}" type="text">
+            <label class="alert alert-danger" for="priiknam"
+                   th:errors="*{priiknam}"
+                   th:if="${#fields.hasErrors('priiknam')}">
+                Ошибка при вводе
+            </label>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="mrazrad">Разряд</label>
+            <select class="form-control" id="mrazrad" name="" th:field="*{mrazrad}">
+                <option th:value="1">1 </option>
+                <option th:value="1">2</option>
+                <option th:value="1">3</option>
+                <option th:value="1">4</option>
+                <option th:value="1">5</option>
+            </select>
+            <label class="alert alert-danger" for="mrazrad"
+                   th:errors="*{mrazrad}"
+                   th:if="${#fields.hasErrors('mrazrad')}">
+                Ошибка при вводе
+            </label>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="kvalkat">Квалификационная категория</label>
+            <select class="form-control" id="kvalkat" name="" th:field="*{kvalKat}">
+                <option th:value="1">1 </option>
+                <option th:value="1">2</option>
+                <option th:value="1">3</option>
+                <option th:value="1">4</option>
+                <option th:value="1">5</option>
+            </select>
+            <label class="alert alert-danger" for="kvalkat"
+                   th:errors="*{kvalKat}"
+                   th:if="${#fields.hasErrors('kvalKat')}">
+                Ошибка при вводе
+            </label>
+        </div>
+
+
+
+
 
 
 

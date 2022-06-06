@@ -140,7 +140,7 @@ DROP TABLE IF EXISTS py2;
 CREATE TABLE IF NOT EXISTS py2(
                                   id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
                                   name VARCHAR(50) NOT NULL,
-                                  reason VARCHAR(20) NOT NULL,
+
                                   date_start VARCHAR(50) NOT NULL,
                                   date_end VARCHAR(100) NOT NULL,
                                   pr_number VARCHAR(50) NOT NULL,
