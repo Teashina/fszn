@@ -44,7 +44,7 @@ public class Dates {
 
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "pu3_id")
+    @JoinColumn(name = "py3_id")
     private PY3 py3;
 
 
