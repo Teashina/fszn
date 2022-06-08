@@ -40,12 +40,12 @@ public class DatesService {
         return datesRepository.findDatesByPy3(py3);
     }
 
-    public void save(Dates py3) {
-        datesRepository.save(py3);
+    public void save(Dates dates) {
+        datesRepository.save(dates);
     }
 
-    public void delete(Dates py3) {
-        datesRepository.delete(py3);
+    public void delete(Dates dates) {
+        datesRepository.delete(dates);
     }
 
     public void deleteById(Long id) {

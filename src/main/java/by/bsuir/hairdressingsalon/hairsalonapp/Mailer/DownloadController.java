@@ -19,10 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.HashMap;
 
 
@@ -127,6 +124,24 @@ public class DownloadController {
 
 
         File file = creatingTXT.CreateFileTXT();
+        File myFile = new File("file.txt");
+        try
+        {
+            FileWriter writer = new FileWriter(myFile);
+            // запись всей строки
+            String text = " ЗГЛВ=1.7=\n" +
+                    "<ПАЧК="+ customer.getIdnum() +"="+ customer.getIdfszn() +"="+ customer.getIpname() + "=" + py1.getName() + "= = =1=\n" +
+                    "    ТИПД=ПУ-1=1= = = = =>\n" +
+                    "<ПУ-1=Р="+ customer.getIdfszn() +"=" + customer.getSurname() +"="+ customer.getName() +"="+ customer.getSecname()+"="+ py1.getSex()+"=112="+ py1.getDate_of_birth() +"=" + py1.getSity_of_birth() + "=" + py1.getArea_of_birth() + "=" + py1.getCitizenship()+ "=" + "= =19/08/2015="+ py1.getKem_vidan() +"="+ customer.getInsurance() +"=" + py1.getIndeks() + "="+ py1.getAddress()+"="+  py1.getTelephone()  +"=" + py1.getTelephone_home()  +"="+ py1.getDate_vidachi() + "= = = = = =>\n";
+            writer.write(text);
+            // запись по символам
+            writer.append('\n');
+            writer.append('E');
+            writer.close();
+        }
+        catch(IOException ex){
+            System.out.println(ex.getMessage());
+        }
 
         if (file.getName().indexOf(".txt")>-1) response.setContentType("application/txt");
         if (file.getName().indexOf(".pdf")>-1) response.setContentType("application/pdf");
@@ -284,8 +299,8 @@ public class DownloadController {
         PropertyConfigurator.configure(log4jConfPath);
         BasicConfigurator.configure();
 
-        String templateDoc = docxPath + "PY2.docx";
-        String outputDoc = resourcesPath + "output//PY2.docx";
+        String templateDoc = docxPath + "PU2.docx";
+        String outputDoc = resourcesPath + "output//PU2.docx";
 
         //String templateDoc = docxPath + "template.docx";
         //String outputDoc = resourcesPath + "output//PY1_R.docx";
@@ -296,7 +311,7 @@ public class DownloadController {
         maps.put("me", "Me too.");
         maps.put("id.num", "что-то");
         maps.put("packname", "что-то");
-        maps.put("id.fszn", customer.getIdfszn());
+        maps.put("id.numfn", customer.getIdfszn());
         maps.put("ip.name", customer.getIpname());
         maps.put("surname", customer.getSurname());
         maps.put("secname", customer.getSecname());
@@ -321,7 +336,7 @@ public class DownloadController {
         maps.put("dateGett", String.valueOf(py2.getDateGett()));
         maps.put("datepriik", String.valueOf(py2.getDatepriik()));
         maps.put("priiknam", py2.getPriiknam());
-        maps.put("mrazrad", py2.getMrazrad());
+        maps.put("razrad", py2.getMrazrad());
         maps.put("KvalKat", py2.getKvalKat());
         maps.put("form", "a");
         maps.put("todayDate", "1234");
@@ -418,8 +433,8 @@ public class DownloadController {
         PropertyConfigurator.configure(log4jConfPath);
         BasicConfigurator.configure();
 
-        String templateDoc = docxPath + "PY3.docx";
-        String outputDoc = resourcesPath + "output//PY3.docx";
+        String templateDoc = docxPath + "PU3.docx";
+        String outputDoc = resourcesPath + "output//PU3.docx";
 
         //String templateDoc = docxPath + "template.docx";
         //String outputDoc = resourcesPath + "output//PY1_R.docx";
@@ -481,7 +496,7 @@ public class DownloadController {
         maps.put("res1", "1234");
         maps.put("perDat2", "1234");
         maps.put("perDat22", "1234");
-        maps.put("res2}", "1234");
+        maps.put("res2", "1234");
         maps.put("todayDate", "1234");
         maps.put("tel", customer.getPhoneNumber());
 
@@ -499,7 +514,7 @@ public class DownloadController {
         System.out.println("Replacing is finished.");
 
 
-        File file = new File("src/main/resources/output/PY3.docx");
+        File file = new File("src/main/resources/output/PU3.docx");
 
         if (file.getName().indexOf(".txt")>-1) response.setContentType("application/txt");
         if (file.getName().indexOf(".pdf")>-1) response.setContentType("application/pdf");

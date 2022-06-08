@@ -251,6 +251,128 @@
     </tr>
 </table>
 
+
+
+
+
+
+    <div class="table-responsive" th:object="${dates}">
+        <table class="table table-borderless table-hover">
+            <thead class="thead-dark">
+            <tr>
+                <th>Дата начала периода работы</th>
+                <th>Дата конца периода работы</th>
+                <th>Вид деятельности</th>
+                <th>Управление</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            <tr>
+                <td> <input class="form-control" id="date_start"
+                            placeholder="dates.date_start"
+                            th:field="*{date_start}" type="date">
+                    <label class="alert alert-danger" for="date_start"
+                           th:errors="*{date_start}"
+                           th:if="${#fields.hasErrors('date_start')}">
+                        Ошибка при вводе имени
+                    </label>
+                </td>
+
+                <td> <input class="form-control" id="date_end"
+                            placeholder="dates.date_start"
+                            th:field="*{date_end}" type="date">
+                    <label class="alert alert-danger" for="date_end"
+                           th:errors="*{date_end}"
+                           th:if="${#fields.hasErrors('date_end')}">
+                        Ошибка при вводе имени
+                    </label></td>
+
+
+                <td>
+                    <select class="form-control" id="codegone" name="" th:field="*{act}">
+                        <option th:value="БЕЗДЕЙСТВ">Бездействие</option>
+                        <option th:value="ВЗНОСЫ">Взносы</option>
+                    </select>
+
+
+                </td>
+
+
+            </tr>
+
+            <tr>
+                <td> <input class="form-control" id="date_start1"
+                            placeholder="dates.date_start"
+                            th:field="*{date_start}" type="date">
+                    <label class="alert alert-danger" for="date_start1"
+                           th:errors="*{date_start}"
+                           th:if="${#fields.hasErrors('date_start')}">
+                        Ошибка при вводе имени
+                    </label>
+                </td>
+
+                <td> <input class="form-control" id="date_end1"
+                            placeholder="dates.date_start"
+                            th:field="*{date_end}" type="date">
+                    <label class="alert alert-danger" for="date_end1"
+                           th:errors="*{date_end}"
+                           th:if="${#fields.hasErrors('date_end')}">
+                        Ошибка при вводе имени
+                    </label></td>
+
+
+                <td>
+                    <select class="form-control" id="codegone1" name="" th:field="*{act}">
+                        <option th:value="БЕЗДЕЙСТВ">Бездействие</option>
+                        <option th:value="ВЗНОСЫ">Взносы</option>
+                    </select>
+
+
+                </td>
+
+
+            </tr>
+
+
+
+
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+<button class="btn btn-primary" type="submit"> Создать ПУ-3</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script type="text/javascript">const Yanvar = document.querySelector('#one'),
     YanvarAll = document.querySelector('#onekek'),
     YanvarPen = document.querySelector('#onepen'),
@@ -340,8 +462,8 @@ March.addEventListener('input', () => {
 
 
 </script>
-    <button class="btn btn-primary" type="submit"> Создать ПУ-3</button>
-</form>
+
+
 </body>
 <script src="script.js"></script>
 </html>

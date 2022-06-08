@@ -2,6 +2,7 @@ package by.bsuir.hairdressingsalon.hairsalonapp.entity;
 
 import lombok.*;
 import org.hibernate.Hibernate;
+import org.hibernate.annotations.Cascade;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -44,6 +45,7 @@ public class Dates {
 
 
     @ManyToOne(fetch = FetchType.EAGER)
+    @Cascade(value = org.hibernate.annotations.CascadeType.ALL)
     @JoinColumn(name = "py3_id")
     private PY3 py3;
 
